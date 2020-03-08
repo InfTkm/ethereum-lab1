@@ -4,7 +4,7 @@
 ### Due: Monday, March 30                                
 ### 10 Points
 
-Learning Objective: In this lab the student will set up an Ethereum
+**Learning Objective:** In this lab the student will set up an Ethereum
 development environment and deploy two smart contracts to an Ethereum
 test blockchain - Ganache.
 
