@@ -57,7 +57,7 @@ want to get some experience deploying and interacting with the code.
   * This first migration deploys the Migrations.sol contract.
 * **test**
   * This directory is for writing tests in Javascript.
-Typically uses the mocha framework and chai assertions library.
+Typically uses the mocha framework and Chai Assertions library.
 In more complex deployments, this directory structure will mirror
 the directory structure required by the application.
 * **truffle-config.js**
