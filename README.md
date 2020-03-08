@@ -121,15 +121,24 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       Faucet.deployed().then(function(x){ myApp = x; });
       ```
       The response should be 'undefined'.
+
    c. To view the response enter the name myApp.
+
       myApp
+
    d. To get access to a web3 object, enter three lines of Javascript.
       The first two will return 'undefined'.
+      ```
       var Web3 = require('web3');
       var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
       web3.isConnected() // should return true if all three lines worked.
+      ```
+
    e. Get the balance on the contract.
+      ```
       contractBalance = web3.eth.getBalance(Faucet.address).toNumber()
+      ```
+      
    f. View the account addresses available on Ganache
       web3.eth.accounts
    g. View the first address. This address is our default address provided
