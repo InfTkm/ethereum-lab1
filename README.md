@@ -123,6 +123,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       The response should be 'undefined'.
 
    c. To view the response enter the name myApp.
+   
       ```
       myApp
       ```
