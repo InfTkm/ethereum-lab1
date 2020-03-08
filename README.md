@@ -96,22 +96,28 @@ the directory structure required by the application.
 7) To create a package.json file, run the following command
    from within the project directory:
 
+ ```
    npm init
+ ```
 
    Take the suggested defaults.
 
 8) From the project directory, run the command
 
+ ```
    npm install dotenv truffle-wallet-provider ethereumjs-wallet
 
+ ```
    This creates a node_modules directory.
 
 9) To compile and deploy the two contracts (Migrations.sol and Faucet.sol)
    to the blockchain (represented by Ganache). Make sure that Ganache is running
    and execute the command:
 
+ ```
    truffle migrate --reset
-
+ ```
+ 
 10) To interact with the deployed contract and accounts, use the truffle console.
 
     a. From the command line, execute the following commands:
