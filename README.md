@@ -208,64 +208,18 @@ want to get some experience deploying and interacting with the code.
 1) Run a new instance of ganache and leave it running for the remainder of this part.
 2) Create a new project directory named DBUC_Lab1_Part3 and cd into it.
 3) Execute the command:
+
+   ```
    truffle init
+
+   ```
 
 4) Create a new contract named Faucet.sol.
 
-5) Use this code for your improved Faucet:
+5) [Use this code for your improved faucet](../blob/master/Faucet.sol)
 
-// Solidity code Faucet8.sol from Pg. 150 Mastering Ethereum
-// Modified for 5.0 and with comments.
-   pragma solidity ^0.5.0;
 
-   contract owned {
-      address payable owner;
-      // This constructor will be inherited.
-      // It takes no arguments and so the
-      // migration will be simple.
-      constructor() public {
-        owner = msg.sender;
-      }
-      // A modifier is a precondition. If the precondition is not satisfied then
-      // the transaction will revert to its prior state.
-      modifier onlyOwner {
-        require (msg.sender == owner, "Only the creator of this contract may call this function");
-        _;
-      }
-   }
-   // Mortal inherits all features of the contract owned.
-   // Mortals may die.
-   contract mortal is owned {
-     // only the creator may destroy this contract
-     function destroy() public onlyOwner {
-       selfdestruct(address(uint160(owner)));
-     }
-   }
-   // Single inheritance
-   contract Faucet is mortal {
-       // Events end up in the receipt of the transaction.
-       // The events may be examined by the contracts caller.
-
-       event Withdrawal(address indexed to, uint amount);
-       event Deposit(address indexed from, uint amount);
-
-       // Withdraw by anyone as long as it's not greater
-       // than 0.1 ether and as long as the contract has ether
-       // to spare.
-       function withdraw(uint withdraw_amount) public {
-           require(withdraw_amount <= 0.1 ether);
-           require(address(this).balance >= withdraw_amount, "Balance too small for this withdrawal");
-           msg.sender.transfer(withdraw_amount);
-           emit Withdrawal(msg.sender, withdraw_amount);
-       }
-       // Pay ether to the contract. Generate an event
-       // upon deposit.
-       function() external payable {
-         emit Deposit(msg.sender, msg.value);
-       }
-   }
-
-   6) Use Part 2 as a guide to deploy this new contract to Ganache.
+6) Use Part 2 as a guide to deploy this new contract to Ganache.
       That is, repeat the following steps from Part 2: Step 6, 7,
       8, 9 and Step 10a to 10d - while replacing myApp with myFaucet
       in Step 10.
