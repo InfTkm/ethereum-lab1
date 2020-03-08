@@ -11,8 +11,8 @@ We will review the contracts in detail at a later date. For now, we
 want to get some experience deploying and interacting with the code.
 
 
-Part 1. Installations
-=====================
+## Part 1. Installations
+
 1) Download and install Google Chrome.
 2) Install the Metamask extension for Google Chrome.
    See: https://metamask.io/
