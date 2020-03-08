@@ -139,9 +139,9 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
    e. Get the balance on the contract.
 
-      ```
+```
       contractBalance = web3.eth.getBalance(Faucet.address).toNumber()
-      ```
+```
 
    f. View the account addresses available on Ganache:
       ```
