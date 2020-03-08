@@ -77,6 +77,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
    This new file will be named 2_deploy_migration.js.
    This file will contain a migration script to deploy Faucet.sol.
    The content of 2_deploy_migrations.js is:
+   ```
 
    // Javascript to deploy Faucet.sol
    var Faucet = artifacts.require("./Faucet.sol");
@@ -84,6 +85,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
      deployer.deploy(Faucet);
    };
 
+```
 7) To create a package.json file, run the following command
    from within the project directory:
    npm init
