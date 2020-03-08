@@ -177,7 +177,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       web3.eth.getBalance(Faucet.address).toNumber();
   ```
 
-   k. Withdraw some ether from the contract and deposit to account[0]. This returns undefined.
+   k. Withdraw some ether from the contract and deposit to account[0]. This returns 'undefined'.
 
   ```
       Faucet.deployed().then(instance => {receipt = instance.withdraw(web3.toWei(0.1,'ether'))});
