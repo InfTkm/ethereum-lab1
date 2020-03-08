@@ -224,11 +224,16 @@ want to get some experience deploying and interacting with the code.
       8, 9 and Step 10a to 10d - while replacing myApp with myFaucet
       in Step 10.
 
-   7) Using the console and web3, view the generated events. Again, see part 2 for help with web3
-      and promises.
-      a. myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event)})
-      b. myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event, res.logs[0].args)})
+7) Using the console and web3, view the generated events. Again, see part 2 for help with web3 and promises. Execute the following two commands:
 
+ ```
+     myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event)})
+
+ ```    
+ ```
+      myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event, res.logs[0].args)})
+
+ ```
 :checkered_flag:**8)At this point, take a screen shot of your Ganache Accounts, Blocks,
          and Transactions. Place these in a single Word or PDF document named
          Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas. **
