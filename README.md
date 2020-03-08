@@ -51,7 +51,7 @@ want to get some experience deploying and interacting with the code.
 4) Examine the directory structure
 
      * contracts holds solidity source code
-           Migrations.sol   a deployment contract
+           ** Migrations.sol   a deployment contract
      * migrations
            ** 1_initial_migrations.js
            ** This first migration deploys the Migrations.sol contract.
