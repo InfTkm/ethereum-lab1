@@ -216,7 +216,7 @@ want to get some experience deploying and interacting with the code.
 
 4) Create a new contract named Faucet.sol.
 
-5) [Use this code for your improved faucet](../blob/master/Faucet.sol)
+5) [Use this code for your improved faucet](../../blob/master/Faucet.sol)
 
 
 6) Use Part 2 as a guide to deploy this new contract to Ganache.
