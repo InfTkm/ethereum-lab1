@@ -128,6 +128,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
    d. To get access to a web3 object, enter three lines of Javascript.
       The first two will return 'undefined'.
+
       ```
       var Web3 = require('web3');
       var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
@@ -135,29 +136,54 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       ```
 
    e. Get the balance on the contract.
+
       ```
       contractBalance = web3.eth.getBalance(Faucet.address).toNumber()
       ```
-      
-   f. View the account addresses available on Ganache
+
+   f. View the account addresses available on Ganache:
+      ```
       web3.eth.accounts
+      ```
+
    g. View the first address. This address is our default address provided
       by Ganache. We are in possession of its private key. Ganache has
       provided this account with 100 eth (but only usable on Ganache).
+      ```
       web3.eth.accounts[0]
+      ```
+
    h. View the contract address.
+
+      ```
       Faucet.address
+      ```
+
    i. Using web3, transfer eth from the first account to the contract.
       The value returned is the transaction hash. Check the logs in Ganache.
+
+      ```
       web3.eth.sendTransaction({from:web3.eth.accounts[0],to:Faucet.address,value:web3.toWei(0.5, 'ether')})
+
+      ```
+
    j. Check that the balance on the contract is higher than before.
+      ```
       web3.eth.getBalance(Faucet.address).toNumber();
+      ```
    k. Withdraw some ether from the contract and deposit to account[0]. This returns undefined.
+      ```
       Faucet.deployed().then(instance => {receipt = instance.withdraw(web3.toWei(0.1,'ether'))});
+      ```
+
    l. But we can examine the returned receipt.
       receipt
+
    m. Check the balance on account[0]. Should be 99591514500000000000.
+
+      ```
       web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
+      ```
 
 11) At this point, take a screen shot of your Ganache Accounts, Blocks,
     and Transactions. Place these in a single Word or PDF document named
