@@ -48,7 +48,7 @@ want to get some experience deploying and interacting with the code.
 
 ```
 
-4) Examine the directory structure
+4) Examine the directory structure:
 
 * **contracts** holds solidity source code
   * Migrations.sol is a deployment contract
@@ -134,7 +134,7 @@ the directory structure required by the application.
       ```
       Faucet.deployed().then(function(x){ myApp = x; });
       ```
-      
+
       The response should be 'undefined'.
 
    c. To view the response enter the name myApp.
