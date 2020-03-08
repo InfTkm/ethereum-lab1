@@ -62,7 +62,7 @@ In more complex deployments, this directory structure will mirror
 the directory structure required by the application.
 * **truffle-config.js**
 
-  *This file contains configuration parameters for truffle.
+  * This file contains configuration parameters for truffle.
 
 5) Create a new contract in the contracts directory. This file will be named
    Faucet.sol. The content of Faucet.sol is:
