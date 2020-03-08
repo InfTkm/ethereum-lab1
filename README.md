@@ -137,15 +137,15 @@ the directory structure required by the application.
 
       The response should be 'undefined'.
 
-   c. To view the response enter the name myApp.
+    c. To view the response enter the name myApp.
 
   ```
       myApp
 
   ```
 
-   d. To get access to a web3 object, enter three lines of Javascript.
-      The first two will return 'undefined'.
+    d. To get access to a web3 object, enter three lines of Javascript.
+       The first two will return 'undefined'.
 
 ```
 
