@@ -10,68 +10,6 @@ test blockchain - Ganache.
 We will review the contracts in detail at a later date. For now, we
 want to get some experience deploying and interacting with the code.
 
-This lab is left in plain text format so that you have an easy time copying the
-text.
-
-Going Further Possibilities
-===========================
-Use Lab 3 Part B and introduce a debugging portion into Lab 1
-
-Introduce into the consensus lecture a discussion of Ripple consensus (avalanche)
-
-
-Connect to Infura rather than Ganache
-
-Have them close Java or Python and interact
-Use Java and Web3j that provides proxy code middleware
-Use Python and Web3
-Use a blockchain explorer like Etherscan
-Read the balance of some account using web3 in wei and convert to ether with web3.utils.fromWei
-Reads on the Ethereum main net are free
-Web3 allows you to view your private key when you create an account
-    web3.eth.accounts.create()
-
-He reads from the real network through Infura but writes contracts on Ganache
-
-Make a contract that runs out of gas
-Have them look at opcodes and compute a cost of a transaction
-Have them look at the JSON-RPC messages with signatures
-
-Web3J polls and Java Futures are used.
-
-Web3.py is out there.
-
-You need ether to interact with infura (but maybe only for mutations?)
-
-Web3j has command line tools
-    wallet create
-    to create a wallet file
-    three lines of Java to send eth from one account to another
-
-Can etherscan be used to visit Ganache?
-
-ethergasstation.info
-
-bitcoin.co/slack channel
-
-Decentralized storage:
-    IPFS and Swarm are similar but Swarm is more native to Ethereum
-
-uPort seems interesting. Built on Ethereum to perform identity management
-
-QR Codes for public keys and the Ethereum wallet
-
-Go through more details of Ganache
-
-Go through more details of Metamask
-
-Use a truffle box to create a uPort identity solution
-
-https://www.youtube.com/watch?v=h7J-SYUOqeA
-
-
-
-
 
 Part 1. Installations
 =====================
