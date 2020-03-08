@@ -107,10 +107,14 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
    truffle migrate --reset
 
 10) To interact with the deployed contract and accounts, use the truffle console.
-Execute the following commands:
 
-    a. truffle console
+    a. From the command line, execute the following commands:
 
+```
+
+    truffle console
+    
+```
     b. Access the contract with an asynchronous request. Use a
        callback function and a promise. The callback
        function is defined within the "then" clause.
