@@ -109,8 +109,6 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 10) To interact with the deployed contract and accounts, use the truffle console.
 
     a. From the command line, execute the following commands:
-
-
     ```
     truffle console
     ```
@@ -119,7 +117,6 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
        callback function and a promise. The callback
        function is defined within the "then" clause.
        Execute the following command within the truffle console.
-
 
       ```
       Faucet.deployed().then(function(x){ myApp = x; });
