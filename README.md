@@ -275,9 +275,9 @@ want to get some experience deploying and interacting with the code.
       a. myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event)})
       b. myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event, res.logs[0].args)})
 
-   8) At this point, take a screen shot of your Ganache Accounts, Blocks,
-      and Transactions. Place these in a single Word or PDF document named
-      Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas.
+:checkered_flag:**8)At this point, take a screen shot of your Ganache Accounts, Blocks,
+         and Transactions. Place these in a single Word or PDF document named
+         Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas. **
 
 Grading rubric
 ==============
