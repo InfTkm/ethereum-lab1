@@ -52,14 +52,11 @@ want to get some experience deploying and interacting with the code.
 
 * contracts holds solidity source code
   * Migrations.sol   a deployment contract
-* migrations
+* migrations so that only changed code gets redeployed
   * 1_initial_migrations.js
   * This first migration deploys the Migrations.sol contract.
-           In complex deployments, you only want to deploy changed
-           contracts. truffle helps with that using
-           migrations. Only code that has changed will be redeployed.
 * test
- **This directory is for writing tests in Javascript.
+ * This directory is for writing tests in Javascript.
 Typically uses the mocha framework and chai assertions library.
 In more complex deployments, this directory structure will mirror
 the directory structure required by the application.
