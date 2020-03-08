@@ -41,7 +41,13 @@ want to get some experience deploying and interacting with the code.
 1) Run ganache quick start and leave it running for the remainder of this part.
 2) Create a new project directory named DBUC_Lab1_Part2 and cd into it.
 3) Execute the command:
+
+ ```
+
    truffle init
+
+```
+
 4) Examine the directory structure
      -- contracts holds solidity source code
            Migrations.sol   a deployment contract
