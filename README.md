@@ -190,7 +190,6 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
 ```
       receipt
-
 ```
    m. Check the balance on account[0]. Should be 99591514500000000000.
 
