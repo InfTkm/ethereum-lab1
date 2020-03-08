@@ -1,7 +1,9 @@
 ## ethereum-lab1
 
-### Developing Blockchain Use Cases                       Spring 2020 Lab 1
-### Due: Monday, March 30                                10 Points
+### Spring 2010 Developing Blockchain Use Cases
+### Lab 1                       
+### Due: Monday, March 30                                
+### 10 Points
 
 Learning Objective: In this lab the student will set up an Ethereum
 development environment and deploy two smart contracts to an Ethereum
