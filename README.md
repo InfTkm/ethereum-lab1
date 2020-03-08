@@ -123,9 +123,10 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       The response should be 'undefined'.
 
    c. To view the response enter the name myApp.
-   
+
       ```
       myApp
+      
       ```
 
    d. To get access to a web3 object, enter three lines of Javascript.
