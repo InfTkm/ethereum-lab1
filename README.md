@@ -117,18 +117,15 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
        callback function and a promise. The callback
        function is defined within the "then" clause.
        Execute the following command within the truffle console.
-
       ```
       Faucet.deployed().then(function(x){ myApp = x; });
       ```
       The response should be 'undefined'.
 
    c. To view the response enter the name myApp.
-
-```
+      ```
        myApp
-
-```
+      ```
    d. To get access to a web3 object, enter three lines of Javascript.
       The first two will return 'undefined'.
 
