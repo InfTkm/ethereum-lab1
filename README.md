@@ -79,7 +79,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
    The content of 2_deploy_migrations.js is:
    ```
 
-   // Javascript to deploy Faucet.sol
+   // Javascript in 2_deploy_migrations.js to deploy Faucet.sol
    var Faucet = artifacts.require("./Faucet.sol");
    module.exports = function(deployer) {
      deployer.deploy(Faucet);
@@ -103,7 +103,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 9) To compile and deploy the two contracts (Migrations.sol and Faucet.sol)
    to the blockchain (represented by Ganache). Make sure that Ganache is running
    and execute the command:
-   
+
    truffle migrate --reset
 
 10) To interact with the deployed contract and accounts, use the truffle console.
@@ -113,12 +113,13 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
     a. truffle console
 
     b. Access the contract with an asynchronous request. Use a
-      callback function and a promise. The callback
-      function is defined within the "then" clause.
-      Execute the following command within the truffle console.
+       callback function and a promise. The callback
+       function is defined within the "then" clause.
+       Execute the following command within the truffle console.
 
+```
       Faucet.deployed().then(function(x){ myApp = x; });
-
+```
       The response should be 'undefined'.
    c. To view the response enter the name myApp.
       myApp
