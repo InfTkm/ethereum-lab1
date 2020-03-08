@@ -279,13 +279,13 @@ want to get some experience deploying and interacting with the code.
          and Transactions. Place these in a single Word or PDF document named
          Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas. **
 
-Grading rubric
-==============
+## Grading rubric
+
     4 points for completion of Part 2
     1 point for correct submission of Part 2 (required Word or PDF document)
     4 points for completion of Part 3
     1 point for correct submission of Part 3 (required Word or PDF document)
 
-Penalty for any late  work
-==========================
+## Penalty for any late  work
+
     -1 point per day late
