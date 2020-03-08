@@ -112,9 +112,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
 
     ```
-
     truffle console
-
     ```
 
     b. Access the contract with an asynchronous request. Use a
