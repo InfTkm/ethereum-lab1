@@ -111,6 +111,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
     a. From the command line, execute the following commands:
 
  ```
+
     truffle console
     
  ```
