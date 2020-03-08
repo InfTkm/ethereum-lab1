@@ -36,8 +36,8 @@ want to get some experience deploying and interacting with the code.
    for Atom.
    See: https://atom.io/packages/atom-solidity-linter
 
-Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
-======
+##Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
+
 1) Run ganache quick start and leave it running for the remainder of this part.
 2) Create a new project directory named DBUC_Lab1_Part2 and cd into it.
 3) Execute the command:
@@ -203,8 +203,8 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       Lab1Part2.doc or Lab1Part2.pdf and submit to Canvas.**
 
 
-Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
-======
+##Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
+
 1) Run a new instance of ganache and leave it running for the remainder of this part.
 2) Create a new project directory named DBUC_Lab1_Part3 and cd into it.
 3) Execute the command:
