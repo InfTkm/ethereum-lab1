@@ -115,7 +115,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
     b. Access the contract with an asynchronous request. Use a
        callback function and a promise. The callback
        function is defined within the "then" clause.
-       Execute the following command within the truffle 'console'.
+       Execute the following command within the truffle console.
 
       ```
       Faucet.deployed().then(function(x){ myApp = x; });
@@ -130,11 +130,9 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       The first two will return 'undefined'.
 
       ```
-
       var Web3 = require('web3');
       var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
       web3.isConnected() // should return true if all three lines worked.
-
       ```
 
    e. Get the balance on the contract.
