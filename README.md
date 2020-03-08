@@ -53,8 +53,8 @@ want to get some experience deploying and interacting with the code.
      * contracts holds solidity source code
            Migrations.sol   a deployment contract
      * migrations
-           1_initial_migrations.js
-           This first migration deploys the Migrations.sol contract.
+           ** 1_initial_migrations.js
+           ** This first migration deploys the Migrations.sol contract.
            In complex deployments, you only want to deploy changed
            contracts. truffle helps with that using
            migrations. Only code that has changed will be redeployed.
