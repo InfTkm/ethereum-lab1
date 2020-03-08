@@ -110,11 +110,12 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
     a. From the command line, execute the following commands:
 
-  ```
+
+    ```
 
     truffle console
 
-  ```
+    ```
 
     b. Access the contract with an asynchronous request. Use a
        callback function and a promise. The callback
