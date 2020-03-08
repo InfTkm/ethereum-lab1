@@ -117,10 +117,11 @@ the directory structure required by the application.
  ```
    truffle migrate --reset
  ```
- 
+
 10) To interact with the deployed contract and accounts, use the truffle console.
 
     a. From the command line, execute the following commands:
+
     ```
     truffle console
     ```
@@ -129,9 +130,11 @@ the directory structure required by the application.
        callback function and a promise. The callback
        function is defined within the "then" clause.
        Execute the following command within the truffle console.
+
       ```
       Faucet.deployed().then(function(x){ myApp = x; });
       ```
+      
       The response should be 'undefined'.
 
    c. To view the response enter the name myApp.
