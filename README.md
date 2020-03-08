@@ -1,7 +1,7 @@
 # ethereum-lab1
 
 Developing Blockchain Use Cases                      Spring 2020 Lab 1
-Due: Monday, March 30, 2020                               10 Points
+Due: Monday, March 30, 2020                          10 Points
 
 Learning Objective: In this lab the student will set up an Ethereum
 development environment and deploy two smart contracts to an Ethereum
@@ -60,6 +60,8 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
 5) Create a new contract in the contracts directory. This file will be named
    Faucet.sol. The content of Faucet.sol is:
+
+   ```
    // Solidity code Faucet.sol
    pragma solidity ^0.5.0;
    contract Faucet {
@@ -69,6 +71,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
        }
        function() external payable {}
    }
+   ```
 6) Create a new migration file in the migrations directory. Do
    not remove the initial migration 1_initial_migration.js.
    This new file will be named 2_deploy_migration.js.
@@ -108,7 +111,7 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
       Execute the following command within the truffle console.
 
       Faucet.deployed().then(function(x){ myApp = x; });
-      
+
       The response should be 'undefined'.
    c. To view the response enter the name myApp.
       myApp
