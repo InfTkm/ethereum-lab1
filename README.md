@@ -1,6 +1,6 @@
 ## ethereum-lab1
 
-### Spring 2010 Developing Blockchain Use Cases Lab 1                    
+### Spring 2020 Developing Blockchain Use Cases Lab 1                    
 ### Due: Monday, March 30                                
 ### 10 Points
 
