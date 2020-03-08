@@ -107,22 +107,23 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
    truffle migrate --reset
 
 10) To interact with the deployed contract and accounts, use the truffle console.
+Execute the following commands:
 
-    Execute the following commands:
+    a. truffle console
 
--a. truffle console
-
--b. Access the contract with an asynchronous request. Use a
+    b. Access the contract with an asynchronous request. Use a
        callback function and a promise. The callback
        function is defined within the "then" clause.
        Execute the following command within the truffle console.
 
-      ```
+```
+
       Faucet.deployed().then(function(x){ myApp = x; });
-      ```
+
+```
       The response should be 'undefined'.
 
-c. To view the response enter the name myApp.
+   c. To view the response enter the name myApp.
 
 ```
        myApp
@@ -131,11 +132,13 @@ c. To view the response enter the name myApp.
    d. To get access to a web3 object, enter three lines of Javascript.
       The first two will return 'undefined'.
 
-  ```
+```
+
       var Web3 = require('web3');
       var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
       web3.isConnected() // should return true if all three lines worked.
-  ```
+
+```
 
    e. Get the balance on the contract.
 
