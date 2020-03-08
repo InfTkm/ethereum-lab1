@@ -121,11 +121,9 @@ Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
        Execute the following command within the truffle console.
 
 
-```
-
+      ```
       Faucet.deployed().then(function(x){ myApp = x; });
-
-```
+      ```
       The response should be 'undefined'.
 
    c. To view the response enter the name myApp.
