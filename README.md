@@ -214,7 +214,8 @@ the directory structure required by the application.
   n. To exit the truffle console hit control d.
 
    ```
-   ctrl+d
+   truffle(ganache)>ctrl+d
+   
    ```
 
   :checkered_flag:**11) At this point, take a screen shot of your Ganache Accounts, Blocks,
