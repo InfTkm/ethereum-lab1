@@ -211,11 +211,11 @@ the directory structure required by the application.
       web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
   ```
 
-  n. To exit the truffle console hit control d.
+   n. To exit the truffle console hit control d.
 
    ```
    truffle(ganache)>ctrl+d
-   
+
    ```
 
   :checkered_flag:**11) At this point, take a screen shot of your Ganache Accounts, Blocks,
