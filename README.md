@@ -235,7 +235,7 @@ the directory structure required by the application.
 
    ```
 
-4) Create a new contract named Faucet.sol.
+4) Create a new contract in the contracts directory and name it Faucet.sol.
 
 5) [Click this link for your Faucet.sol code.](../../blob/master/Faucet.sol)
 
