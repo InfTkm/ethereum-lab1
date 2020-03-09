@@ -237,7 +237,7 @@ the directory structure required by the application.
 
 4) Create a new contract named Faucet.sol.
 
-5) [Click this link for your improved faucet.](../../blob/master/Faucet.sol)
+5) [Click this link for your Faucet.sol code.](../../blob/master/Faucet.sol)
 
 
 6) Use Part 2 as a guide to deploy this new contract to Ganache.
