@@ -38,7 +38,7 @@
        // to spare.
        function withdraw(uint withdraw_amount) public {
            require(withdraw_amount <= 0.1 ether);
-           require(address(this).balance >= withdraw_amount, "Balance too small for this withdrawal");
+           require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
            msg.sender.transfer(withdraw_amount);
            emit Withdrawal(msg.sender, withdraw_amount);
        }
