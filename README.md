@@ -215,6 +215,8 @@ the directory structure required by the application.
       and Transactions. Place these in a single Word or PDF document named
       Lab1Part2.doc or Lab1Part2.pdf and submit to Canvas.**
 
+  You can exit the truffle console by holding the CTRL down and striking D.
+
 
 ## Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
