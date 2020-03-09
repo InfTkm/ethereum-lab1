@@ -111,7 +111,7 @@ the directory structure required by the application.
    This creates a node_modules directory.
 
 9) To compile and deploy the two contracts (Migrations.sol and Faucet.sol)
-   to the blockchain (represented by Ganache). Make sure that Ganache is running
+   to the blockchain (represented by Ganache), make sure that Ganache is running
    and execute the command:
 
  ```
