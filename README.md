@@ -256,7 +256,7 @@ the directory structure required by the application.
    Save the workspace
 
    On the server side (Ganache) you should now be able to view the following tabs:
-   Accounts, Blocks, Transactions, Contracts, Events, and Logs
+   Accounts, Blocks, Transactions, Contracts, Events, and Logs.
 
 4) Create a new contract in the contracts directory and name it Faucet.sol.
 
