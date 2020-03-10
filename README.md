@@ -280,9 +280,9 @@ the directory structure required by the application.
 
  8) Send a "withdraw" transaction to the contract. This will be a request to withdraw 2 eth.
 
-     Describe what happens on the client.
+     In your own words, describe what happens on the client.
 
-     Describe the last log on Ganache.
+     In your own words, describe the last log on Ganache.
 
  9)  Send a single request to withdraw 0.1 eth from the contract.
 
@@ -292,14 +292,22 @@ the directory structure required by the application.
 
      require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
 
-     Force this "require" to fail and show the logs where this error is mentioned.
+     Force this "require" to fail and show the logs where this error is mentioned. The logs are found on the Ganache user interface.
 
-11)  Show a screenshot showing the balance and storage associated with your Faucet contract.
+11)  Show a screenshot showing the balance and storage associated with your Faucet contract. The balance and storage associated with a contract  are found on the Ganache user interface.
 
 12)  Show a screenshot showing the transactions and events that are associated
-     with your Faucet contract.
+     with your Faucet contract. The transactions and events associated with a contract are found on the Ganache user interface.
 
-:checkered_flag:**13)Place screenshots in a single Word or PDF document named
+Part 3 Submission summary:
+
+     Question 8 Two paragraphs
+     Question 9 Transaction receipt
+     Question 10 copy and paste of partial log file
+     Question 11 screenshot
+     Question 12 screenshot
+
+:checkered_flag:**13)Place your submissions in a single Word or PDF document named
          Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas. **
 
 ## Grading rubric
