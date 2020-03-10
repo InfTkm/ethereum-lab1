@@ -1,16 +1,26 @@
-## ethereum-lab1
-
-### Spring 2020 Developing Blockchain Use Cases Lab 1                    
-### Due: Monday, March 30                                
+## Spring 2020 Developing Blockchain Use Cases Lab 1                             
+### Carnegie Mellon University                  
+### Due: Monday, March 30, 2020                                
 ### 10 Points
 
 **Learning Objective:** In this lab the student will set up an Ethereum
-development environment and deploy two smart contracts to an Ethereum
-test blockchain - Ganache.
+development environment (using Truffle and Ganache) and deploy two smart
+contracts to an Ethereum test blockchain. The smart contracts will be
+written in the Solidity programming language.
 
-We will review the contracts in detail at a later date. For now, we
-want to get some experience deploying and interacting with the code.
+We will experiment with running "transactions". Transactions cause state
+changes, cost ether (gas), and may only return responses at a later time.
 
+We will also run "calls". Calls do not change state on the blockchain and
+cost nothing to run (no gas). They are processed immediately and provide
+an immediate return value.
+
+We will review the various views of the blockchain that Ganache provides.
+
+The contracts themselves will be studied in detail at a later date. For
+now, we want to get some experience deploying and interacting with the
+Solidity code and the environment provided by client side Truffle and
+server side Ganache.
 
 ## Part 1. Installations
 
@@ -223,40 +233,75 @@ the directory structure required by the application.
       Lab1Part2.doc or Lab1Part2.pdf and submit to Canvas.**
 
 
-
 ## Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
-1) Run a new instance of ganache and leave it running for the remainder of this part.
-2) Create a new project directory named DBUC_Lab1_Part3 and cd into it.
-3) Execute the command:
+1) Create a new project directory named DBUC_Lab1_Part3 and cd into it.
+
+2) Execute the command:
 
    ```
    truffle init
 
    ```
+3) Run a new instance of ganache. Configure Ganache as follows:
+
+   Select new workspace
+
+   Select add project
+
+   Choose the file truffle-config.js in your DBUC_Lab1_Part3 project directory.
+
+   Provide the workspace with an appropriate name
+
+   Save the workspace
+
+   On the server side (Ganache) you should now be able to view the following tabs:
+   Accounts, Blocks, Transactions, Contracts, Events, Logs
 
 4) Create a new contract in the contracts directory and name it Faucet.sol.
 
 5) [Click this link for your Faucet.sol code.](../../blob/master/Faucet.sol)
 
-
-6) Use Part 2 as a guide to deploy this new contract to Ganache.
+6) Use Part 2 as a guide and deploy this new contract to Ganache.
       That is, repeat the following steps from Part 2: Step 6, 7,
       8, 9 and Step 10a to 10d - while replacing myApp with myFaucet
       in Step 10.
 
-7) Using the console and web3, view the generated events. Again, see part 2 for help with web3 and promises. Execute the following two commands:
+7) Send a total of 2 ether to the contract with these two commands:
 
  ```
-     myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event)})
+      myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event)})
 
  ```    
  ```
       myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event, res.logs[0].args)})
 
  ```
-:checkered_flag:**8)At this point, take a screen shot of your Ganache Accounts, Blocks,
-         and Transactions. Place these in a single Word or PDF document named
+
+ 8) Send a withdraw transaction to the contract. This will be a request to withdraw 2 eth.
+
+     Describe what happens on the client.
+
+     Describe the last log on Ganache.
+
+ 9)  Send a single request to withdraw .1 eth from the contract.
+
+     Show the receipt that is returned from this request here.
+
+10)  Make enough withdrawals from the contract so that it runs out of eth. We
+     are interested in the first request that causes this require statement to
+     fail:
+
+     require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
+
+     Show the logs where this error is mentioned.
+
+11)  Show a screenshot showing the balance and storage of your Faucet contract.
+
+12)  Show a screenshot showing the transactions and events that are associated
+     with your Faucet contract.
+
+:checkered_flag:**13)Place screenshots in a single Word or PDF document named
          Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas. **
 
 ## Grading rubric
