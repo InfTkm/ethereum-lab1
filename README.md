@@ -243,22 +243,23 @@ the directory structure required by the application.
    ```
 3) Run a new instance of ganache. Configure Ganache as follows:
 
-   Select new workspace
+   Select "new workspace".
 
-   Select add project
+   Select "add project".
 
-   Choose the file truffle-config.js in your DBUC_Lab1_Part3 project directory.
+   Choose the file "truffle-config.js" in your "DBUC_Lab1_Part3" project directory.
 
-   Provide the workspace with an appropriate name
+   Provide the workspace with an appropriate name.
 
-   Save the workspace
+   Save the workspace.
 
    On the server side (Ganache) you should now be able to view the following tabs:
-   Accounts, Blocks, Transactions, Contracts, Events, and Logs.
+   Accounts, Blocks, Transactions, Contracts, Events, and Logs. These are all now
+   associated with your project.
 
 4) Create a new contract in the contracts directory and name it Faucet.sol.
 
-5) [Click this link for your Faucet.sol code.](../../blob/master/Faucet.sol)
+5) [Click here to see your Faucet.sol code.](../../blob/master/Faucet.sol)
 
 6) Use Part 2 as a guide and deploy this new contract to Ganache.
       That is, repeat the following steps from Part 2: Step 6, 7,
