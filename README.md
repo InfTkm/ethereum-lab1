@@ -308,7 +308,7 @@ Part 3 Submission summary:
      Question 12 screenshot
 
 :checkered_flag:**13)Place your submissions in a single Word or PDF document named
-         Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas. **
+         Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas.**
 
 ## Grading rubric
 
