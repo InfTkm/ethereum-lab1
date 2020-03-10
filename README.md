@@ -286,15 +286,15 @@ the directory structure required by the application.
 
  9)  Send a single request to withdraw 0.1 eth from the contract.
 
-     Show the receipt that is returned from this request here.
+     Show the receipt that is returned from this request.
 
-10)  Make enough withdrawals from the contract so that it (the contract) runs out of eth. We are interested in the first request that causes the following require statement to fail:
+10)  Make enough withdrawals from the contract so that it (the contract) runs out of eth. We are interested in the first request that causes the following "require" statement to fail:
 
      require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
 
      Force this "require" to fail and show the logs where this error is mentioned.
 
-11)  Show a screenshot showing the balance and storage of your Faucet contract.
+11)  Show a screenshot showing the balance and storage associated with your Faucet contract.
 
 12)  Show a screenshot showing the transactions and events that are associated
      with your Faucet contract.
