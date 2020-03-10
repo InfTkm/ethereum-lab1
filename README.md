@@ -256,7 +256,7 @@ the directory structure required by the application.
    Save the workspace
 
    On the server side (Ganache) you should now be able to view the following tabs:
-   Accounts, Blocks, Transactions, Contracts, Events, Logs
+   Accounts, Blocks, Transactions, Contracts, Events, and Logs
 
 4) Create a new contract in the contracts directory and name it Faucet.sol.
 
@@ -278,23 +278,21 @@ the directory structure required by the application.
 
  ```
 
- 8) Send a withdraw transaction to the contract. This will be a request to withdraw 2 eth.
+ 8) Send a "withdraw" transaction to the contract. This will be a request to withdraw 2 eth.
 
      Describe what happens on the client.
 
      Describe the last log on Ganache.
 
- 9)  Send a single request to withdraw .1 eth from the contract.
+ 9)  Send a single request to withdraw 0.1 eth from the contract.
 
      Show the receipt that is returned from this request here.
 
-10)  Make enough withdrawals from the contract so that it runs out of eth. We
-     are interested in the first request that causes this require statement to
-     fail:
+10)  Make enough withdrawals from the contract so that it (the contract) runs out of eth. We are interested in the first request that causes the following require statement to fail:
 
      require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
 
-     Show the logs where this error is mentioned.
+     Force this "require" to fail and show the logs where this error is mentioned.
 
 11)  Show a screenshot showing the balance and storage of your Faucet contract.
 
