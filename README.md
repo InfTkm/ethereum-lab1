@@ -228,9 +228,7 @@ the directory structure required by the application.
 
    ```
 
-  :checkered_flag:**11) At this point, take a screen shot of your Ganache Accounts, Blocks,
-      and Transactions. Place these in a single Word or PDF document named
-      Lab1Part2.doc or Lab1Part2.pdf and submit to Canvas.**
+  :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf and submit to Canvas.**
 
 
 ## Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
