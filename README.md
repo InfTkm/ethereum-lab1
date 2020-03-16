@@ -285,7 +285,7 @@ the directory structure required by the application.
 
      In your own words, describe what happens on the client.
 
-     In your own words, describe the last log on Ganache.
+     In your own words, describe the most recent activities on the Ganache Logs user interface.
 
  9)  Send a single request to withdraw 0.1 eth from the contract.
 
