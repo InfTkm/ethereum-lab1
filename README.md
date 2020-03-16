@@ -228,7 +228,7 @@ the directory structure required by the application.
 
    ```
 
-  :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf and submit to Canvas.**
+  :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf. **
 
 
 ## Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
@@ -307,7 +307,7 @@ Part 3 Submission summary:
      Question 12 screenshot
 
 :checkered_flag:**13)Place your submissions in a single Word or PDF document named
-         Lab1Part3.doc or Lab1Part3.pdf and submit to Canvas.**
+         Lab1Part3.doc or Lab1Part3.pdf.**
 
 ## Part 4 Using a Truffle box with MetaCoin.sol, ConvertLib.sol and the testing framework.  
 
@@ -415,10 +415,10 @@ compare it with the code we entered above in the console.
 
 8) From the project directory, execute the test code by running:
 
-```
+ ```
 truffle tests
 
-```
+ ```
 
 9) Take a screenshot of the command line output.
 
@@ -426,16 +426,15 @@ truffle tests
 sendCoin is called with an inappropriate transfer of funds. You need to
 submit three items:
 
-    a) Submit a copy of your new MetaCoin contract - include your name in the
+    a) Submit a copy of your new MetaCoin.sol contract - include your name in the
     program comments.
     b) Show a screenshot of your command line that is testing this event. That
     is, show an example of making a call where the sender has insufficient funds.
-    c) Show the transaction receipt that is returned to the caller. This transaction
-    receipt will contain the following line
+    c) Show the transaction receipt that is returned to the caller. This transaction receipt will contain the following line:
 
-```
-event: 'InsufficientFunds'
-```      
+ ```
+event: 'Insufficient_Funds'
+ ```      
 
 Part 4 Submission summary:
 
@@ -443,20 +442,22 @@ Part 4 Submission summary:
               Question 10 a. Submit a modified MetaCoin contract (including your name).
               Question 10 b. Submit a command line screenshot.
               Question 10 c. Submit a copy of the receipt showing insufficient funds.
-
+              Question 10 d. Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.
 
 :checkered_flag:**11)Place your submissions in a single Word or PDF document named
-                  Lab1Part4.doc or Lab1Part4.pdf and submit to Canvas.**
+                  Lab1Part4.doc or Lab1Part4.pdf.**
+
+:checkered_flag:**Place your three submission documents in a single directory and zip that directory. Name the zip file <your-andrew-id>Lab1.zip. Submit this single zip file to Canvas.**
 
 
-## Grading rubric
+## Grading rubric of the materials in the submission directory.
 
     3 points for completion of Part 2
-    0.5 points for correct submission of Part 2 (required Word or PDF document)
+    0.5 points for correct submission of Part 2
     3 points for completion of Part 3
-    0.5 points for correct submission of Part 3 (required Word or PDF document)
+    0.5 points for correct submission of Part 3
     3 points for completion of Part 4
-    0.5 points for correct submission of Part 4 (required Word or PDF document)
+    0.5 points for correct submission of Part 4
 
 ## Penalty for any late  work
 
