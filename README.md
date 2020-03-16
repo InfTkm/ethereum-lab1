@@ -153,14 +153,14 @@ the directory structure required by the application.
 
     c. To view the response enter the name myApp.
 
-  ```
+ ```
       myApp
 
   ```
-  d. To get access to a web3 object, enter three lines of Javascript.
+    d. To get access to a web3 object, enter three lines of Javascript.
        The first two will return 'undefined'.
 
-  ```
+ ```
 
       var Web3 = require('web3');
       var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
