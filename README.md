@@ -3,8 +3,8 @@
 ### Due: Monday, March 30, 2020                                
 ### 10 Points
 
-**Learning Objective:** In this lab the student will set up an Ethereum
-development environment (using Truffle and Ganache) and deploy two smart
+**Learning Objectives:** In this lab the student will set up an Ethereum
+development environment (using Truffle and Ganache) and deploy three smart
 contracts to an Ethereum test blockchain. The smart contracts will be
 written in the Solidity programming language.
 
@@ -16,6 +16,8 @@ cost nothing to run (no gas). They are processed immediately and provide
 an immediate return value.
 
 We will review the various views of the blockchain that Ganache provides.
+
+Solidity event generation and a testing framework are also introduced and the student will modify an existing contract.
 
 The contracts themselves will be studied in detail at a later date. For
 now, we want to get some experience deploying and interacting with the
@@ -37,7 +39,7 @@ server side Ganache.
    npm install -g truffle
 6) Download and install Ganache.
    See: https://truffleframework.com/ganache
-7) If you want to use Atom as your editor, download and install atom.
+7) If you want to use Atom as your editor (recommended) , download and install atom.
    See: https://atom.io
 8) If you are using Atom, you may want to download and install
    language-solidity for Atom.
