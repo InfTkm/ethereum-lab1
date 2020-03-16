@@ -2,6 +2,8 @@
 ### Carnegie Mellon University                  
 ### Due: Monday, March 30, 2020                                
 ### 10 Points
+### Lab Assistance provided by Michael McCarthy
+### On zoom: ChatWithmm6
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
 development environment (using Truffle and Ganache) and deploy three smart
@@ -454,7 +456,7 @@ Part 4 Submission summary:
               Question 10 b. Submit a command line screenshot.
 
               Question 10 c. Submit a copy of the receipt showing insufficient funds.
-              
+
               Question 10 d. Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.
 
 :checkered_flag:**11)Place your submissions in a single Word or PDF document named
@@ -463,7 +465,7 @@ Part 4 Submission summary:
 :checkered_flag:**Place your three submission documents in a single directory and zip that directory. Name the zip file <your-andrew-id>Lab1.zip. Submit this single zip file to Canvas.**
 
 
-## Grading rubric of the materials in the submission directory.
+## Grading rubric for the materials in the submission directory.
 
     3 points for completion of Part 2
     0.5 points for correct submission of Part 2
