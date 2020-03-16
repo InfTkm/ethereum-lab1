@@ -421,7 +421,6 @@ compare it with the code we entered above in the console.
 truffle tests
 
  ```
-
 9) Take a screenshot of the command line output.
 
 10) Add a new Event to the MetaCoin contract. This event will be fired when
@@ -437,6 +436,12 @@ submit three items:
  ```
 event: 'Insufficient_Funds'
  ```      
+ 11) Note that, from the project directory, you can compile your Solidity code by running:
+
+ ```
+  truffle compile
+
+ ```
 
 Part 4 Submission summary:
 
