@@ -157,7 +157,7 @@ the directory structure required by the application.
       myApp
 
   ```
-    d. To get access to a web3 object, enter three lines of Javascript.
+  d. To get access to a web3 object, enter three lines of Javascript.
        The first two will return 'undefined'.
 
  ```
