@@ -9,7 +9,7 @@ contracts to an Ethereum test blockchain. The smart contracts will be
 written in the Solidity programming language.
 
 We will experiment with running "transactions". Transactions cause state
-changes, cost ether (gas), and may only return responses at a later time.
+changes, cost ether (for using gas), and may only return responses at a later time.
 
 We will also run "calls". Calls do not change state on the blockchain and
 cost nothing to run (no gas). They are processed immediately and provide
