@@ -3,7 +3,8 @@
 ### Due: Monday, March 30, 2020                                
 ### 10 Points
 ### Lab Assistance provided by Michael McCarthy
-### On zoom: ChatWithmm6
+### Email: mm6@andrew.cmu.edu
+### Zoom: ChatWithmm6
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
 development environment (using Truffle and Ganache) and deploy three smart
