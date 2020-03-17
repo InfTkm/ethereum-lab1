@@ -4,7 +4,7 @@
 ### 10 Points
 ### Lab Assistance provided by Michael McCarthy
 ### Email: mm6@andrew.cmu.edu
-### Zoom: ChatWithmm6
+### Zoom URL: Please see Canvas and look under "Pages". 
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
 development environment (using Truffle and Ganache) and deploy three smart
