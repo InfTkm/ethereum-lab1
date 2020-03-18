@@ -440,7 +440,10 @@ submit three items:
 
  ```
 event: 'Insufficient_Funds'
- ```      
+ ```
+    d) Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.  
+
+        
  11) Note that, from the project directory, you can compile your Solidity code by running:
 
  ```
