@@ -4,7 +4,7 @@
 ### 10 Points
 ### Lab Assistance provided by Michael McCarthy
 ### Email: mm6@andrew.cmu.edu
-### Zoom URL: Please see Canvas and look under "Pages". 
+### Zoom URL: Please see Canvas and look under "Pages".
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
 development environment (using Truffle and Ganache) and deploy three smart
@@ -372,7 +372,7 @@ module.exports = {
 Note that most of these commands are 'calls' and cost no gas. The transaction sendCoin,
 however, costs gas and generates a receipt. Make a copy of this receipt for submission.
 
-          ```
+```
             truffle migrate --reset
             truffle console  
 
@@ -413,7 +413,7 @@ however, costs gas and generates a receipt. Make a copy of this receipt for subm
             accountTwoEndingBalance = (await metaCoinInstance.getBalance.call(accountTwo)).toNumber()
             accountTwoEndingBalance
 
-          ```    
+```    
 7) Exit the console (ctrl-D) and examine the directory named test. It contains a file named
 metacoin.js that is provided as part of the truffle box. Look over the javascript codse and
 compare it with the code we entered above in the console.
