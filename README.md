@@ -438,10 +438,10 @@ submit three items:
 
     c) Show the transaction receipt that is returned to the caller. This transaction receipt will contain the following line:
 
-```
+ ```
 event: 'Insufficient_Funds'
 
-```
+ ```
 
     d) Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.  
 
