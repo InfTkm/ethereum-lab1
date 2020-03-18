@@ -439,6 +439,7 @@ submit three items:
     c) Show the transaction receipt that is returned to the caller. This transaction receipt will contain the following line:
 
  ```
+
 event: 'Insufficient_Funds'
 
  ```
