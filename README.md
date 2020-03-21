@@ -124,7 +124,7 @@ the directory structure required by the application.
    npm install truffle-wallet-provider
 
  ```
-   This creates a node_modules directory.
+   This creates a node_modules directory. Ignore the warnings.
 
 9) To compile and deploy the two contracts (Migrations.sol and Faucet.sol)
    to the blockchain (represented by Ganache), make sure that Ganache is running
