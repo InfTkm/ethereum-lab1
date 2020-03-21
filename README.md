@@ -121,7 +121,7 @@ the directory structure required by the application.
 
  ```
 
-   npm install truffle-wallet-provider
+  npm install dotenv truffle-wallet-provider ethereumjs-wallet
 
  ```
    This creates a node_modules directory. Ignore the warnings.
