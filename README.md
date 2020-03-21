@@ -120,7 +120,8 @@ the directory structure required by the application.
 8) From the project directory, run the command
 
  ```
-   npm install dotenv truffle-wallet-provider ethereumjs-wallet
+
+   npm install truffle-wallet-provider
 
  ```
    This creates a node_modules directory.
