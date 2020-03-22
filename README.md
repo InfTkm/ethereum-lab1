@@ -478,9 +478,9 @@ Part 4 Submission summary:
 ## Grading rubric for the materials in the submission directory.
 
     3 points for completion of Part 2
-    0.5 points for correct submission of Part 2
+    0.25 points for correct submission of Part 2
     3 points for completion of Part 3
-    0.5 points for correct submission of Part 3
+    0.25 points for correct submission of Part 3
     3 points for completion of Part 4
     0.5 points for correct submission of Part 4
 
