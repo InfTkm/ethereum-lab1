@@ -315,7 +315,7 @@ Part 3 Submission summary:
 :checkered_flag:**13)Place your submissions in a single Word or PDF document named
          Lab1Part3.doc or Lab1Part3.pdf.**
 
-## Part 4 Using a Truffle box with MetaCoin.sol, ConvertLib.sol and the testing framework.  
+## Part 4 Using a Truffle box with MetaCoin.sol, ConvertLib.sol and the testing framework  
 
 1) Create a new project directory named DBUC_Lab1_Part4 and cd into it.
 
@@ -475,7 +475,7 @@ Part 4 Submission summary:
 :checkered_flag:**Place your three submission documents and modified Metacoin contract in a single directory and zip that directory. Name the zip file <your-andrew-id>Lab1.zip. Submit this single zip file to Canvas.**
 
 
-## Grading rubric for the materials in the submission directory.
+## Grading rubric for the materials in the submission directory
 
     3 points for completion of Part 2
     0.25 points for correct submission of Part 2
