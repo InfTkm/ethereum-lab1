@@ -270,7 +270,7 @@ the directory structure required by the application.
 6) Use Part 2 as a guide and deploy this new contract to Ganache.
       That is, repeat the following steps from Part 2: Step 6, 7,
       8, 9 and Step 10a to 10d - while replacing myApp with myFaucet
-      in Step 10.
+      in Step 10b.
 
 7) Send a total of 2 ether to the contract with these two commands:
 
@@ -416,7 +416,7 @@ however, costs gas and generates a receipt. Make a copy of this receipt for subm
 
 ```    
 7) Exit the console (ctrl-D) and examine the directory named test. It contains a file named
-metacoin.js that is provided as part of the truffle box. Look over the javascript codse and
+metacoin.js that is provided as part of the truffle box. Look over the javascript code and
 compare it with the code we entered above in the console.
 
 8) From the project directory, execute the test code by running:
@@ -425,7 +425,7 @@ compare it with the code we entered above in the console.
 truffle tests
 
  ```
-9) Take a screenshot of the command line output.
+9) Take a screenshot of the command line output. That is, show the result of running the 5 tests.
 
 10) Add a new Event to the MetaCoin contract. This event will be fired when
 sendCoin is called with an inappropriate transfer of funds. You need to
