@@ -269,7 +269,7 @@ the directory structure required by the application.
 
 6) Use Part 2 as a guide and deploy this new contract to Ganache.
       That is, repeat the following steps from Part 2: Step 6, 7,
-      8, 9 and Step 10a to 10d - while replacing 'myApp' with 'myFaucet'
+      8, 9 and Step 10a to 10d - while replacing "myApp" with "myFaucet"
       in Step 10b.
 
 7) Send a total of 2 ether to the contract with these two commands:
