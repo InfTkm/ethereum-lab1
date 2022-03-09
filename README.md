@@ -373,9 +373,13 @@ module.exports = {
 Note that most of these commands are 'calls' and cost no gas. The transaction sendCoin,
 however, costs gas and generates a receipt. Make a copy of this receipt for submission.
 
+
 ```
             truffle migrate --reset
-            truffle console  
+            truffle console
+```
+
+```
 
             metaCoinInstance = await MetaCoin.deployed()
 
@@ -384,15 +388,20 @@ however, costs gas and generates a receipt. Make a copy of this receipt for subm
             balance
 
             balance.toNumber()
-
+```
+```
             metaCoinBalance = (await metaCoinInstance.getBalance.call(accounts[0])).toNumber()
 
             metaCoinBalance
+```
 
+```
             metaCoinEthBalance = (await metaCoinInstance.getBalanceInEth.call(accounts[0])).toNumber()
 
             metaCoinEthBalance
+```
 
+```
             accountOne = accounts[0]
 
             accountTwo = accounts[1]
@@ -405,8 +414,14 @@ however, costs gas and generates a receipt. Make a copy of this receipt for subm
             accountTwoStartingBalance
 
             amount = 10
-            metaCoinInstance.sendCoin(accountTwo, amount, { from: accountOne })
 
+```
+Keep a copy of this receipt.
+```
+            metaCoinInstance.sendCoin(accountTwo, amount, { from: accountOne })
+```
+
+```
             accountOneEndingBalance = (await metaCoinInstance.getBalance.call(accountOne)).toNumber()
 
             accountOneEndingBalance
