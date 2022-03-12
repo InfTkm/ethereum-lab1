@@ -533,29 +533,27 @@ contract UniqueAsset is ERC721URIStorage {
     return newItemId;
   }
 }
-
-
 ```
-   d) Within the migrations directory, create 2_deploy_contracts.js.
+d) Within the migrations directory, create 2_deploy_contracts.js.
+
 ```
 const UniqueAsset = artifacts.require("UniqueAsset");
 module.exports = function(deployer) {
   deployer.deploy(UniqueAsset);
 }
-```
 
-    e) In a shell in the nft directory, run
+```
+e) In a shell in the nft directory, run
 
 ```
     npm install fs
 ```
-    f) In a shell in the nft directory, run
+f) In a shell in the nft directory, run
 ```
     npm install @truffle/hdwallet-provider@1.2.3
 ```
-    g) Modify truffle-config.js so it has compiler version 0.8.1 and set docker to false.
-
-    ```
+g) Modify truffle-config.js so it has compiler version 0.8.1 and set docker to false.
+```
     // Configure your compilers
     compilers: {
       solc: {
@@ -575,16 +573,15 @@ module.exports = function(deployer) {
 ```
       mkdir credential
 ```
-   i) Place a simple file in the credential directory
+i) Place a simple file in the credential directory
 ```
       echo "This is an important credential" > credential.txt
 ```
-   j) Add the credential file to ipfs and make a copy of the content identifier (CID). The CID begins with "Qm".
+j) Add the credential file to ipfs and make a copy of the content identifier (CID). The CID begins with "Qm".
 ```
       ipfs add credential.txt
 ```
-
-   k) Add this metadata file to the credential directory. Name it credentialMetaData.json. Include the CID associated with credential.txt.
+k) Add this metadata file to the credential directory. Name it credentialMetaData.json. Include the CID associated with credential.txt.
 ```
    {
      "name" : "My cool credential",
@@ -592,68 +589,65 @@ module.exports = function(deployer) {
      "file" : "https//ipfs.io/ipfs/THE_CREDENTIAL_CID_GOES_HERE"
    }
 ```
-
-   l) Add the metadata file to ipfs:
+l) Add the metadata file to ipfs:
 ```
       ipfs add credentialMetaData.json
 ```
-
-   m) Examine your metadata file using ipfs:
+m) Examine your metadata file using ipfs:
 ```
       ipfs cat /ipfs/THE_METADATA_CID_GOES_HERE
 ```
-
-   m) From the nft directory, compile the nft contract:
+n) From the nft directory, compile the nft contract:
 ```
    truffle compile
 ```
 
-   n) Run Ganache Workspace and point to nft/truffle-config.js.
+   o) Run Ganache Workspace and point to nft/truffle-config.js.
 
-   o) From the nft directory, deploy the NFT contract to Ganache:
+   p) From the nft directory, deploy the NFT contract to Ganache:
 ```
    truffle migrate
 ```
-   p) Run the Truffle console:
+   q) Run the Truffle console:
 ```
    truffle console
 ```
-   q) Access the contract:
+   r) Access the contract:
 ```
    let contract = await UniqueAsset.deployed();
 ```
-   r) Visit Ganache and make a copy of the first account address (include the "0x"). This becomes the first argument to the awardItem call. Use the CID of the metadata file as the second argument. Run the following command in the truffle console:
+   s) Visit Ganache and make a copy of the first account address (include the "0x"). This becomes the first argument to the awardItem call. Use the CID of the metadata file as the second argument. Run the following command in the truffle console:
 ```
    let result = await contract.awardItem("ACCOUNT_ADDR_GOES_HERE","https//ipfs.io/ipfs/THE_META_DATA_CID_GOES_HERE")
 ```
-   s) Examine the name of the contract:
+   t) Examine the name of the contract:
 ```
    let nameOfToken = await contract.name()
    nameOfToken
 ```
 
-   t) Examine the balance of the first account:
+   u) Examine the balance of the first account:
 ```
    let balance = await contract.balanceOf("ACCOUNT_ADDR_GOES_HERE")
    balance.toNumber()
 ```
-   u) Examine the balance of the second account. Fill in the blank.
+   v) Examine the balance of the second account. Fill in the blank.
 
-   v) Who is the owner of the Token ID 1?
+   w) Who is the owner of the Token ID 1?
 ```
     let owner = await contract.ownerOf("1")
     owner
 ```
-   w) Transfer the token to the second account.
+   x) Transfer the token to the second account.
 ```
    account_from = "0xTHE_ADDRESS_OF_THE_FIRST_ACCOUNT"
    account_to = "0xTHE_ADDRESS_OF_THE_SECOND_ACCOUNT"
    let transfer = await contract.transferFrom(account_from, account_to, 1)
    transfer
 ```
-   x) Who is the new owner? Show the command that you use to learn who the new owner is. Fill in the blank.
+   y) Who is the new owner? Show the command that you use to learn who the new owner is. Fill in the blank.
 
-   :checkered_flag:**11)Place a copy of the transaction receipt from step 3 w) and your answer to question 3 x) in a clearly labeled single Word or PDF document named Lab1Part5.doc or Lab1Part5.pdf.**
+   :checkered_flag:**11)Place a copy of the transaction receipt from step 3 x) and your answer to question 3 y) in a clearly labeled single Word or PDF document named Lab1Part5.doc or Lab1Part5.pdf.**
 
    :checkered_flag:**Place your four submission documents and modified Metacoin contract in a single directory and zip that directory. Name the zip file <your-andrew-id>Lab1.zip. Submit this single zip file to Canvas.**   
 
