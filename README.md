@@ -7,9 +7,11 @@
 ### Zoom URL: Please see Canvas and look under "Pages".
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
-development environment (using Truffle and Ganache) and deploy three smart
+development environment (using Truffle and Ganache) and deploy four smart
 contracts to an Ethereum test blockchain. The smart contracts will be
 written in the Solidity programming language.
+
+Three of these contracts will involve working with fungible tokens and the fourth contract is a non-fungible (NFT) contract.
 
 We will experiment with running "transactions". Transactions cause state
 changes, cost ether (for using gas), and may only return responses at a later time.
@@ -234,7 +236,7 @@ the directory structure required by the application.
 
    ```
 
-  :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf. **
+  :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a clearly labeled single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf. **
 
 
 ## Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
@@ -312,8 +314,7 @@ Part 3 Submission summary:
      Question 11 screenshot
      Question 12 screenshot
 
-:checkered_flag:**13)Place your submissions in a single Word or PDF document named
-         Lab1Part3.doc or Lab1Part3.pdf.**
+:checkered_flag:**13) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part3.doc or Lab1Part3.pdf.**
 
 ## Part 4 Using a Truffle box with MetaCoin.sol, ConvertLib.sol and the testing framework  
 
@@ -485,20 +486,159 @@ Part 4 Submission summary:
 
               Question 10 d. Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.
 
-:checkered_flag:**11)Place your submissions in a single Word or PDF document named
-                  Lab1Part4.doc or Lab1Part4.pdf.**
+:checkered_flag:**11) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part4.doc or Lab1Part4.pdf.**
 
-:checkered_flag:**Place your three submission documents and modified Metacoin contract in a single directory and zip that directory. Name the zip file <your-andrew-id>Lab1.zip. Submit this single zip file to Canvas.**
 
+
+## Part 5 Creating an NFT
+
+
+1) Using the directions found here, install the Interplanetary File System (IPFS)
+
+https://docs.ipfs.io/install/command-line/#system-requirements
+
+2) Using these directions, initialize the IPFS repository.
+
+https://docs.ipfs.io/how-to/command-line-quick-start/
+
+3) These instructions are modified from the video found here:
+https://www.youtube.com/watch?v=IFpU4TNwXec
+
+  a) In an empty directory named nft, run
+     truffle init
+  b) npm install @openzeppelin/contracts
+  c) Within the contracts directory, create UniqueAsset.sol.
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+contract UniqueAsset is ERC721URIStorage {
+  using Counters for Counters.Counter;
+  Counters.Counter private _tokenIds;
+  constructor() ERC721("UniqueAsset","UNA") {}
+  function awardItem(address recipient, string memory metadata)
+  public returns (uint256) {
+    _tokenIds.increment();
+    uint256 newItemId = _tokenIds.current();
+    _mint(recipient,newItemId);
+    _setTokenURI(newItemId,metadata);
+    return newItemId;
+  }
+}
+
+
+```
+   d) Within the migrations directory, create 2_deploy_contracts.js.
+```
+const UniqueAsset = artifacts.require("UniqueAsset");
+module.exports = function(deployer) {
+  deployer.deploy(UniqueAsset);
+}
+```
+    e) In a shell in the nft directory, run
+    npm install fs
+
+    f) In a shell in the nft directory, run
+    npm install @truffle/hdwallet-provider@1.2.3
+
+    g) Modify truffle-congig.js so it has the correct compiler and set docker to false.
+    ```
+    // Configure your compilers
+    compilers: {
+      solc: {
+        version: "0.8.1",    // Fetch exact version from solc-bin (default: truffle's version)
+        docker: false,        // Use "0.5.1" you've installed locally with docker (default: false)
+        settings: {          // See the solidity docs for advice about optimization and evmVersion
+        optimizer: {
+        enabled: false,
+        runs: 200
+        },
+        evmVersion: "byzantium"
+        }
+      }
+    },
+```
+   h) From the nft directory, run
+      mkdir credential
+
+   i) Place a simple file in the credential directory
+      echo "This is an important credential" > credential.txt
+   j) Add the credential file to ipfs:
+      ipfs add credential.txt
+      Make a copy of the content identifier (CID). The CID begins with "Qm".
+
+      Qma53rnxYuVFTXSbRZaJzB63MDXJZ6eZPacWX4XZDhn4y6
+
+   k) Add this metadata file to the credential directory. Name it credentialMetaData.json.
+      Include the CID associated with credential.txt.
+   {
+     "name" : "My cool credential",
+     "description" : "This is a credential that I worked very hard to attain.",
+     "file" : "https//ipfs.io/ipfs/THE_CREDENTIAL_CID_GOES_HERE"
+   }
+
+   l) Add the metadata file to ipfs:
+      ipfs add credentialMetaData.json
+
+   m) Examine your metadata file using ipfs:
+      ipfs cat /ipfs/THE_METADATA_CID_GOES_HERE
+
+   m) From the nft directory, compile the nft contract:
+   truffle compile
+
+   n) Run Ganache Workspace and point to nft/truffle-config.js.
+
+   o) From the nft directory, deploy the NFT contract to Ganache:
+   truffle migrate
+
+   p) Run the console:
+   truffle console
+
+   q) Access the contract:
+   let contract = await UniqueAsset.deployed();
+
+   r) Visit Ganache and make a copy of the first account address (include the "0x"). This becomes the first argument to the awardItem call. Use the CID of the metadata file as the second argument. Run the following command in the truffle console:
+
+   let result = await contract.awardItem("ACCOUNT_ADDR_GOES_HERE","https//ipfs.io/ipfs/THE_META_DATA_CID_GOES_HERE")
+
+   s) Examine the name of the contract:
+   let nameOfToken = await contract.name()
+   nameOfToken
+
+   t) Examine the balance of the first account:
+   let balance = await contract.balanceOf("ACCOUNT_ADDR_GOES_HERE")
+   balance.toNumber()
+
+   u) Examine the balance of the second account.
+
+   v) Who is the owner of the Token ID 1?
+
+    let owner = await contract.ownerOf("1")
+    owner
+
+   w) Transfer the token to the second account.
+   account_from = "0xTHE_ADDRESS_OF_THE_FIRST_ACCOUNT"
+   account_to = "0xTHE_ADDRESS_OF_THE_SECOND_ACCOUNT"
+   let transfer = await contract.transferFrom(account_from, account_to, 1)
+   transfer
+
+   x) Who is the new owner? Show the command that you use to learn who the new owner is. 
+
+   :checkered_flag:**11)Place a copy of the transaction receipt from step 3 w) and your answer to question 3 x) in a clearly labeled single Word or PDF document named Lab1Part5.doc or Lab1Part5.pdf.**
+
+   :checkered_flag:**Place your four submission documents and modified Metacoin contract in a single directory and zip that directory. Name the zip file <your-andrew-id>Lab1.zip. Submit this single zip file to Canvas.**   
 
 ## Grading rubric for the materials in the submission directory
 
-    3 points for completion of Part 2
+    2 points for completion of Part 2
     0.25 points for correct submission of Part 2
-    3 points for completion of Part 3
+    2 points for completion of Part 3
     0.25 points for correct submission of Part 3
-    3 points for completion of Part 4
-    0.5 points for correct submission of Part 4
+    2 points for completion of Part 4
+    0.25 points for correct submission of Part 4
+    2 points for completion of Part 5
+    0.25 points for correct submission of Part 5
 
 ## Penalty for any late  work
 
