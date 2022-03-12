@@ -543,7 +543,9 @@ module.exports = function(deployer) {
   deployer.deploy(UniqueAsset);
 }
 ```
+
     e) In a shell in the nft directory, run
+
 ```
     npm install fs
 ```
