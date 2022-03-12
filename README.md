@@ -505,10 +505,17 @@ https://docs.ipfs.io/how-to/command-line-quick-start/
 https://www.youtube.com/watch?v=IFpU4TNwXec
 
   a) In an empty directory named nft, run
-     truffle init
-  b) npm install @openzeppelin/contracts
-  c) Within the contracts directory, create UniqueAsset.sol.
 ```
+     truffle init
+```
+  b) In the same directory run
+```
+  npm install @openzeppelin/contracts
+```
+
+c) Within the contracts directory, create UniqueAsset.sol.
+```
+// UniqueAsset.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
@@ -537,12 +544,15 @@ module.exports = function(deployer) {
 }
 ```
     e) In a shell in the nft directory, run
+```
     npm install fs
-
+```
     f) In a shell in the nft directory, run
+```
     npm install @truffle/hdwallet-provider@1.2.3
+```
+    g) Modify truffle-config.js so it has compiler version 0.8.1 and set docker to false.
 
-    g) Modify truffle-congig.js so it has the correct compiler and set docker to false.
     ```
     // Configure your compilers
     compilers: {
@@ -560,70 +570,86 @@ module.exports = function(deployer) {
     },
 ```
    h) From the nft directory, run
+```
       mkdir credential
-
+```
    i) Place a simple file in the credential directory
+```
       echo "This is an important credential" > credential.txt
-   j) Add the credential file to ipfs:
+```
+   j) Add the credential file to ipfs and make a copy of the content identifier (CID). The CID begins with "Qm".
+```
       ipfs add credential.txt
-      Make a copy of the content identifier (CID). The CID begins with "Qm".
+```
 
-      Qma53rnxYuVFTXSbRZaJzB63MDXJZ6eZPacWX4XZDhn4y6
-
-   k) Add this metadata file to the credential directory. Name it credentialMetaData.json.
-      Include the CID associated with credential.txt.
+   k) Add this metadata file to the credential directory. Name it credentialMetaData.json. Include the CID associated with credential.txt.
+```
    {
      "name" : "My cool credential",
      "description" : "This is a credential that I worked very hard to attain.",
      "file" : "https//ipfs.io/ipfs/THE_CREDENTIAL_CID_GOES_HERE"
    }
+```
 
    l) Add the metadata file to ipfs:
+```
       ipfs add credentialMetaData.json
+```
 
    m) Examine your metadata file using ipfs:
+```
       ipfs cat /ipfs/THE_METADATA_CID_GOES_HERE
+```
 
    m) From the nft directory, compile the nft contract:
+```
    truffle compile
+```
 
    n) Run Ganache Workspace and point to nft/truffle-config.js.
 
    o) From the nft directory, deploy the NFT contract to Ganache:
+```
    truffle migrate
-
-   p) Run the console:
+```
+   p) Run the Truffle console:
+```
    truffle console
-
+```
    q) Access the contract:
+```
    let contract = await UniqueAsset.deployed();
-
+```
    r) Visit Ganache and make a copy of the first account address (include the "0x"). This becomes the first argument to the awardItem call. Use the CID of the metadata file as the second argument. Run the following command in the truffle console:
-
+```
    let result = await contract.awardItem("ACCOUNT_ADDR_GOES_HERE","https//ipfs.io/ipfs/THE_META_DATA_CID_GOES_HERE")
-
+```
    s) Examine the name of the contract:
+```
    let nameOfToken = await contract.name()
    nameOfToken
+```
 
    t) Examine the balance of the first account:
+```
    let balance = await contract.balanceOf("ACCOUNT_ADDR_GOES_HERE")
    balance.toNumber()
-
-   u) Examine the balance of the second account.
+```
+   u) Examine the balance of the second account. Fill in the blank.
 
    v) Who is the owner of the Token ID 1?
-
+```
     let owner = await contract.ownerOf("1")
     owner
-
+```
    w) Transfer the token to the second account.
+```
    account_from = "0xTHE_ADDRESS_OF_THE_FIRST_ACCOUNT"
    account_to = "0xTHE_ADDRESS_OF_THE_SECOND_ACCOUNT"
    let transfer = await contract.transferFrom(account_from, account_to, 1)
    transfer
-
-   x) Who is the new owner? Show the command that you use to learn who the new owner is. 
+```
+   x) Who is the new owner? Show the command that you use to learn who the new owner is. Fill in the blank.
 
    :checkered_flag:**11)Place a copy of the transaction receipt from step 3 w) and your answer to question 3 x) in a clearly labeled single Word or PDF document named Lab1Part5.doc or Lab1Part5.pdf.**
 
