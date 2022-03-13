@@ -581,7 +581,7 @@ j) Add the credential file to ipfs and make a copy of the content identifier (CI
 ```
       ipfs add credential.txt
 ```
-k) Add this metadata file to the credential directory. Name it credentialMetaData.json. Include the CID associated with credential.txt.
+k) Add this metadata file to the credential directory. Name it credentialMetadata.json. Include the CID associated with credential.txt.
 ```
    {
      "name" : "My cool credential",
@@ -591,7 +591,7 @@ k) Add this metadata file to the credential directory. Name it credentialMetaDat
 ```
 l) Add the metadata file to ipfs:
 ```
-      ipfs add credentialMetaData.json
+      ipfs add credentialMetadata.json
 ```
 m) Examine your metadata file using ipfs:
 ```
