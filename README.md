@@ -2,9 +2,9 @@
 ### Carnegie Mellon University                  
 ### Due: 11:59 PM, Monday, March 28, 2022                                
 ### 10 Points
-### Lab Assistance provided by Michael McCarthy
-### Email: mm6@andrew.cmu.edu
-### Zoom URL: Please see Canvas and look under "Pages".
+### Lab Assistance provided by Michael McCarthy and Abhraneil Chandra
+### McCarthy Email: mm6@andrew.cmu.edu
+### Chandra Email: abhranec@andrew.cmu.edu
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
 development environment (using Truffle and Ganache) and deploy four smart
