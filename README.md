@@ -44,14 +44,12 @@ server side Ganache.
    npm install -g truffle
 6) Download and install Ganache.
    See: https://truffleframework.com/ganache
-7) If you want to use Atom as your editor (recommended) , download and install atom.
-   See: https://atom.io
-8) If you are using Atom, you may want to download and install
-   language-solidity for Atom.
-   See: https://atom.io/packages/language-solidity
-9) If you are using Atom, you may want to download and install atom-solidity-linter
-   for Atom.
-   See: https://atom.io/packages/atom-solidity-linter
+7) If you want to use Visual Studio Code as your editor (recommended) , download and install atom.
+   See: https://code.visualstudio.com
+8) If you are using Visual Studio Code, you may want to download and install
+   solidity.
+   See: https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity
+
 
 ## Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
@@ -85,14 +83,14 @@ the directory structure required by the application.
    Faucet.sol. The content of Faucet.sol is:
 
    ```
-   // Solidity code Faucet.sol
-   pragma solidity ^0.5.0;
+   pragma solidity ^0.8.0;
    contract Faucet {
-       function withdraw(uint withdraw_amount) public {
-           require(withdraw_amount <= 100000000000000000000);
-           msg.sender.transfer(withdraw_amount);
-       }
-       function() external payable {}
+      function withdraw(uint withdraw_amount) public {
+         require(withdraw_amount <= 100000000000000000000);
+         payable(msg.sender).transfer(withdraw_amount);
+      }
+
+      fallback() external payable {}
    }
    ```
 6) Create a new migration file in the migrations directory. Do
@@ -223,7 +221,7 @@ the directory structure required by the application.
 ```
       receipt
 ```
-   m. Check the balance on account[0]. Should be 99591514500000000000.
+   m. Check the balance on account[0]. Should be 99590121300000000000.
 
   ```
       web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
@@ -301,6 +299,8 @@ the directory structure required by the application.
 
      Force this "require" to fail and show the logs where this error is mentioned. The logs are found on the Ganache user interface.
 
+     These don't seem to be present???? 
+
 11)  Show a screenshot showing the balance and storage associated with your Faucet contract. The balance and storage associated with a contract  are found on the Ganache user interface.
 
 12)  Show a screenshot showing the transactions and events that are associated
@@ -366,7 +366,7 @@ module.exports = {
 
          Save the workspace.
 
-5) Notice that you have three contracts in the contracts subdirectory. One
+5) Notice that you have two contracts in the contracts subdirectory. One
    of these is the migration contract and the other two are ConvertLib.sol	and
    MetaCoin.sol.
 
