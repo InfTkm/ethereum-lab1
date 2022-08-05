@@ -1,10 +1,11 @@
-## Spring 2020 Developing Blockchain Use Cases Lab 1                             
+## Spring 2022 Developing Blockchain Use Cases Lab 1                             
 ### Carnegie Mellon University                  
-### Due: 11:59 PM, Monday, March 28, 2022                                
+### Due: TBD                                
 ### 10 Points
-### Lab Assistance provided by Michael McCarthy and Abhraneil Chandra
-### McCarthy Email: mm6@andrew.cmu.edu
-### Chandra Email: abhranec@andrew.cmu.edu
+### Lab Assistance provided by Michael McCarthy, Abhraneil Chandra and Arjun Brar
+#### McCarthy Email: mm6@andrew.cmu.edu
+#### Chandra Email: abhranec@andrew.cmu.edu
+#### Arjun Email: abrar@andrew.cmu.edu
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
 development environment (using Truffle and Ganache) and deploy four smart
