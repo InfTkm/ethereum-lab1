@@ -46,7 +46,7 @@ server side Ganache.
 6) Download and install Ganache.
    See: https://truffleframework.com/ganache
 
-   NOTE: The current release of ganache is only available for x86 architectures.
+   NOTE: The current release of Ganache is only available for x86 architectures.
    On newer M1 and M2 Mac devices, this can still be run by installing Rosetta
    (See: https://support.apple.com/en-us/HT211861). However, this is not available
    on Virtual Machines on M1 and M2 Mac devices.
@@ -73,10 +73,11 @@ server side Ganache.
 4) Examine the directory structure:
 
 * **contracts** holds solidity source code
-  * Migrations.sol is a deployment contract
+  * Migrations.sol (if present) is a deployment contract that would be placed here for complex deployments.
 * **migrations** holds javascript code for efficient redeployments
-  * 1_initial_migrations.js
-  * This first migration deploys the Migrations.sol contract.
+  * Files here are numbered to specify the order of deployments
+  * For example, 1_initial_migrations.js would run first. 2_deploy_migrartions.js would run second and so on.
+  * The first migration would normally deploy the Migrations.sol contract (if present).
 * **test**
   * This directory is for writing tests in Javascript.
 It typically uses the mocha framework and Chai Assertions library.
