@@ -326,37 +326,38 @@ myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event
 myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event, res.logs[0].args)})
 ```
 
- 8) Send a "withdraw" transaction to the contract. This will be a request to withdraw 2 eth.
+8) Using Ganache, examine the balance stored in the contract.
+
+9) Send a "withdraw" transaction to the contract. This will be a request to withdraw 2 eth.
 
 In your own words, describe what happens on the client.
 
-In your own words, describe the most recent activities on the Ganache Logs user interface.
+In your own words, describe why this failed.
 
-9) Send a single request to withdraw 0.1 eth from the contract.
+10) Send a single request to withdraw 0.1 eth from the contract.
 
 Show the receipt that is returned from this request.
 
-10)  Make enough withdrawals from the contract so that it (the contract) runs out of eth. We are interested in the first request that causes the following "require" statement to fail:
+11)  Make enough of these "0.1 eth withdrawals" from the contract so that it (the contract) runs out of eth. We are interested in the first request that causes the following "require" statement to fail:
 
 ```
 require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
 ```
-Force this "require" to fail and show the logs where this error is mentioned. The logs are found on the truffle console.
+Force this "require" to fail and show the client side error.
 
-11)  Show a screenshot showing the balance and storage associated with your Faucet contract. The balance and storage associated with a contract  are found on the Ganache user interface.
+12)  Show a screenshot showing the balance and storage associated with your Faucet contract. The balance and storage associated with a contract are found on the Ganache user interface.
 
-12)  Show a screenshot showing the transactions and events that are associated
-     with your Faucet contract. The transactions and events associated with a contract are found on the Ganache user interface.
+13)  Show a screenshot showing the transactions and events that are associated with your Faucet contract. The transactions and events associated with a contract are found on the Ganache user interface.
 
 Part 3 Submission summary:
 
-     Question 8 Two paragraphs
-     Question 9 Transaction receipt
-     Question 10 copy and paste of partial log file
-     Question 11 screenshot
+     Question 9 Two paragraphs
+     Question 10 Transaction receipt
+     Question 11 Client side error
      Question 12 screenshot
+     Question 13 screenshot
 
-:checkered_flag:**13) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part3.doc or Lab1Part3.pdf.**
+:checkered_flag:**14) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part3.doc or Lab1Part3.pdf.**
 
 ## Part 4 Using a Truffle box with MetaCoin.sol, ConvertLib.sol and the testing framework  
 
