@@ -25,7 +25,7 @@ We will review the various views of the blockchain that Ganache provides.
 
 Solidity event generation and a testing framework are also introduced and the student will modify an existing contract.
 
-The contracts themselves will be studied in detail at a later date. For
+The contracts themselves will be studied in detail in class. For
 now, we want to get some experience deploying and interacting with the
 Solidity code and the environment provided by client side Truffle and
 server side Ganache.
@@ -47,7 +47,7 @@ server side Ganache.
    See: https://truffleframework.com/ganache
 
    NOTE: The current release of ganache is only available for x86 architectures.
-   On newer M1 and M2 Mac devices, this can still be run by installing Rosetta 
+   On newer M1 and M2 Mac devices, this can still be run by installing Rosetta
    (See: https://support.apple.com/en-us/HT211861). However, this is not available
    on Virtual Machines on M1 and M2 Mac devices.
 
