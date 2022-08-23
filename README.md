@@ -40,9 +40,9 @@ server side Ganache.
 4) Download and install node.js and npm.
    The node package manager (npm) is included with the download of
    node.js. See https://nodejs.org/en/download/
-5) Download and install truffle.
-   See: https://truffleframework.com/docs/truffle/getting-started/installation
-   npm install -g truffle
+5) Install truffle. We are using version 5.5.23.
+   npm i -g truffle@5.5.23
+   https://truffleframework.com/docs/truffle/getting-started/installation
 6) Download and install Ganache.
    See: https://truffleframework.com/ganache
 
@@ -73,11 +73,11 @@ server side Ganache.
 4) Examine the directory structure:
 
 * **contracts** holds solidity source code
-  * Migrations.sol (if present) is a deployment contract that would be placed here for complex deployments.
+  * Migrations.sol is a deployment contract that we do not normally change.
 * **migrations** holds javascript code for efficient redeployments
-  * Files here are numbered to specify the order of deployments
+  * Files here are numbered to specify the order of deployments.
   * For example, 1_initial_migrations.js would run first. 2_deploy_migrartions.js would run second and so on.
-  * The first migration would normally deploy the Migrations.sol contract (if present).
+  * The first migration would normally deploy the Migrations.sol contract.
 * **test**
   * This directory is for writing tests in Javascript.
 It typically uses the mocha framework and Chai Assertions library.
@@ -272,7 +272,7 @@ the directory structure required by the application.
 5) [Click here to see your Faucet.sol code.](../../blob/master/Faucet.sol)
 
 6) Use Part 2 as a guide and deploy this new contract to Ganache.
-      That is, repeat the following steps from Part 2: Step 6, 7,
+      That is, repeat the following steps from Part 2: Step 6, we already did 7,
       8, 9 and Step 10a to 10d - while replacing "myApp" with "myFaucet"
       in Step 10b.
 
