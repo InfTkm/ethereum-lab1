@@ -86,6 +86,7 @@ the directory structure required by the application.
 * **truffle-config.js**
 
   * This Javascript file contains configuration parameters for this truffle project.
+  * You may select your Solidity compiler version in this file.
 
 5) Create a new contract in the contracts directory. This file will be named
    Faucet.sol. The content of Faucet.sol is:
