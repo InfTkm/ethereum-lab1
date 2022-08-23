@@ -46,8 +46,8 @@ server side Ganache.
 6) Download and install Ganache.
    See: https://truffleframework.com/ganache
 
-   NOTE: The current release of ganace is only available for x86 architectures. 
-   On newer M1 and M2 Mac devices, this can be run by installing Rosetta 
+   NOTE: The current release of ganache is only available for x86 architectures.
+   On newer M1 and M2 Mac devices, this can still be run by installing Rosetta 
    (See: https://support.apple.com/en-us/HT211861). However, this is not available
    on Virtual Machines on M1 and M2 Mac devices.
 
