@@ -145,101 +145,100 @@ the directory structure required by the application.
 
 10) To interact with the deployed contract and accounts, use the truffle console.
 
-    a. From the command line, execute the following commands:
+a. From the command line, execute the following commands:
 
-    ```sh
-    truffle console
-    ```
+```sh
+truffle console
+```
 
-    b. Access the contract with an asynchronous request. Use a
+b. Access the contract with an asynchronous request. Use a
        callback function and a promise. The callback
        function is defined within the "then" clause.
        Execute the following command within the truffle console.
 
-      ```js
-      Faucet.deployed().then(function(x){ myApp = x; });
-      ```
-
-      The response should be 'undefined'.
-
-    c. To view the response enter the name myApp.
-
-   ```
-      myApp
-
-   ```
-  d. To get access to a web3 object, enter three lines of Javascript.
-       The first two will return 'undefined'.
-
 ```js
-      var Web3 = require('web3');
-      var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
-      web3.isConnected() // should return true if all three lines worked.
+Faucet.deployed().then(function(x){ myApp = x; });
 ```
 
-   e. Get the balance on the contract.
+The response should be 'undefined'.
+
+c. To view the response enter the name myApp.
+
+```
+myApp
+
+```
+d. To get access to a web3 object, enter three lines of Javascript.
+The first two will return 'undefined'.
 
 ```js
-      contractBalance = web3.eth.getBalance(Faucet.address).toNumber()
+var Web3 = require('web3');
+var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+web3.isConnected() // should return true if all three lines worked.
 ```
-
-   f. View the account addresses available on Ganache:
+e. Get the balance on the contract.
 
 ```js
-      web3.eth.accounts
+contractBalance = web3.eth.getBalance(Faucet.address).toNumber()
 ```
 
-   g. View the first address. This address is our default address provided
+f. View the account addresses available on Ganache:
+
+```js
+web3.eth.accounts
+```
+
+g. View the first address. This address is our default address provided
       by Ganache. We are in possession of its private key. Ganache has
       provided this account with 100 eth (but only usable on Ganache).
 
 ```js
-      web3.eth.accounts[0]
+web3.eth.accounts[0]
 ```
 
-   h. View the contract address.
+h. View the contract address.
 
 ```js
-      Faucet.address
+Faucet.address
 ```
 
-   i. Using web3, transfer eth from the first account to the contract.
-      The value returned is the transaction hash. Check the logs in Ganache.
+i. Using web3, transfer eth from the first account to the contract.
+The value returned is the transaction hash. Check the logs in Ganache.
 
 ```js
-      web3.eth.sendTransaction({from:web3.eth.accounts[0],to:Faucet.address,value:web3.toWei(0.5, 'ether')})
+web3.eth.sendTransaction({from:web3.eth.accounts[0],to:Faucet.address,value:web3.toWei(0.5, 'ether')})
 ```
 
-   j. Check that the balance on the contract is higher than before.
+j. Check that the balance on the contract is higher than before.
 
 ```js
-      web3.eth.getBalance(Faucet.address).toNumber();
+web3.eth.getBalance(Faucet.address).toNumber();
 ```
 
-   k. Withdraw some ether from the contract and deposit to account[0]. This returns 'undefined'.
+k. Withdraw some ether from the contract and deposit to account[0]. This returns 'undefined'.
 
 ```js
-      Faucet.deployed().then(instance => {receipt = instance.withdraw(web3.toWei(0.1,'ether'))});
+Faucet.deployed().then(instance => {receipt = instance.withdraw(web3.toWei(0.1,'ether'))});
 ```
 
-   l. But we can examine the returned receipt.
+l. But we can examine the returned receipt.
 
 ```js
-      receipt
+receipt
 ```
-   m. Check the balance on account[0]. Should be 99590121300000000000.
+m. Check the balance on account[0]. Should be 99590121300000000000.
 
 ```js
-      web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
+web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
 ```
 
-   n. To exit the truffle console hit control d.
+n. To exit the truffle console hit control d.
 
 ```
-   truffle(ganache)>ctrl+d
+truffle(ganache)>ctrl+d
 ```
 
-  :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a clearly labeled single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf. **
+:checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a clearly labeled single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf. **
 
 
 ## Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
@@ -271,35 +270,78 @@ the directory structure required by the application.
 
 5) [Click here to see your Faucet.sol code.](../../blob/master/Faucet.sol)
 
-6) Use Part 2 as a guide and deploy this new contract to Ganache.
-      That is, repeat the following steps from Part 2: Step 6, we already did 7,
-      8, 9 and Step 10a to 10d - while replacing "myApp" with "myFaucet"
-      in Step 10b.
+6) Next, you will deploy this new contract to Ganache.
+
+a. Create a file named 2_deploy_migrations.js in the migrations directory:
+
+```js
+// Javascript in 2_deploy_migrations.js to deploy Faucet.sol
+var Faucet = artifacts.require("./Faucet.sol");
+module.exports = function(deployer) {
+  deployer.deploy(Faucet);
+};
+```
+b. To create a package.json file, run the following command
+   from within the project directory:
+
+ ```sh
+   npm init
+ ```
+ Take the suggested defaults.
+
+
+c. Compile and deploy the contracts:
+```sh
+  truffle migrate --reset
+```
+
+d. Use the console to access the contract and establish a web3 connection:
+
+From the command line, execute the following commands:
+
+```sh
+truffle console
+```
+Within the console, run the following:
+
+```js
+Faucet.deployed().then(function(x){ myFaucet = x; });
+```
+
+Within the console, run the following to access web3:
+
+
+```js
+var Web3 = require('web3');
+var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+web3.isConnected() // should return true if all three lines worked.
+```
 
 7) Send a total of 2 ether to the contract with these two commands:
 
 ```js
-      myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event)})
+myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event)})
 ```    
 ```js
-      myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event, res.logs[0].args)})
+myFaucet.send(web3.toWei(1,"ether")).then(res => { console.log(res.logs[0].event, res.logs[0].args)})
 ```
 
  8) Send a "withdraw" transaction to the contract. This will be a request to withdraw 2 eth.
 
-     In your own words, describe what happens on the client.
+In your own words, describe what happens on the client.
 
-     In your own words, describe the most recent activities on the Ganache Logs user interface.
+In your own words, describe the most recent activities on the Ganache Logs user interface.
 
- 9)  Send a single request to withdraw 0.1 eth from the contract.
+9) Send a single request to withdraw 0.1 eth from the contract.
 
-     Show the receipt that is returned from this request.
+Show the receipt that is returned from this request.
 
 10)  Make enough withdrawals from the contract so that it (the contract) runs out of eth. We are interested in the first request that causes the following "require" statement to fail:
 
-     require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
-
-     Force this "require" to fail and show the logs where this error is mentioned. The logs are found on the truffle console.
+```
+require((address(this)).balance >= withdraw_amount,"Balance too small for this withdrawal");
+```
+Force this "require" to fail and show the logs where this error is mentioned. The logs are found on the truffle console.
 
 11)  Show a screenshot showing the balance and storage associated with your Faucet contract. The balance and storage associated with a contract  are found on the Ganache user interface.
 
