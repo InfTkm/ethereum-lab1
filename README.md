@@ -289,7 +289,7 @@ b. To create a package.json file, run the following command
  ```
  Take the suggested defaults.
 
- c) From the project directory, run the command
+ c. From the project directory, run the command
 
   ```sh
 
