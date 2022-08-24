@@ -440,39 +440,57 @@ truffle console
 metaCoinInstance = await MetaCoin.deployed()
 
 ```
+
 ```
 
 balance = await metaCoinInstance.getBalance.call(accounts[0])
 ```
+
 ```
 balance
 ```
-balance.toNumber()
 ```
+balance.toNumber()
+
+```
+
 ```js
 metaCoinBalance = (await metaCoinInstance.getBalance.call(accounts[0])).toNumber()
+```
+```js
 
 metaCoinBalance
 ```
 
+
 ```js
 metaCoinEthBalance = (await metaCoinInstance.getBalanceInEth.call(accounts[0])).toNumber()
 
+```
+```
 metaCoinEthBalance
 ```
 
 ```js
+
 accountOne = accounts[0]
-
+```
+```js
 accountTwo = accounts[1]
-
+```
+```js
 accountOneStartingBalance = (await metaCoinInstance.getBalance.call(accountOne)).toNumber()
-
+```
+```
 accountOneStartingBalance
-
+```
+```
 accountTwoStartingBalance = (await metaCoinInstance.getBalance.call(accountTwo)).toNumber()
+```
+```
 accountTwoStartingBalance
-
+```
+```
 amount = 10
 
 ```
@@ -484,13 +502,17 @@ metaCoinInstance.sendCoin(accountTwo, amount, { from: accountOne })
 
 ```js
 accountOneEndingBalance = (await metaCoinInstance.getBalance.call(accountOne)).toNumber()
-
+```
+```js
 accountOneEndingBalance
-
+```
+```js
 accountTwoEndingBalance = (await metaCoinInstance.getBalance.call(accountTwo)).toNumber()
+```
+```js
 accountTwoEndingBalance
+```
 
-```    
 7) Exit the console (ctrl-D) and examine the directory named test. It contains a file named
 metacoin.js that is provided as part of the truffle box. Look over the javascript code and
 compare it with the code we entered above in the console.
@@ -514,9 +536,9 @@ submit three items:
 
     c) Show the transaction receipt that is returned to the caller. This transaction receipt will contain the following line:
 
-    ```js
-    event: 'Insufficient_Funds'
-    ```
+```js
+event: 'Insufficient_Funds'
+```
 
     d) Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.  
 
@@ -541,7 +563,7 @@ Part 4 Submission summary:
 
               Question 10 d. Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.
 
-:checkered_flag:**11) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part4.doc or Lab1Part4.pdf.**
+:checkered_flag:**12) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part4.doc or Lab1Part4.pdf.**
 
 
 
