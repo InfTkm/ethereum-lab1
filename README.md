@@ -1,6 +1,6 @@
-## Spring 2022 Developing Blockchain Use Cases Lab 1                             
+## Fall 2022 Blockchain and SQL Fundamentals                             
 ### Carnegie Mellon University                  
-### Due: TBD                                
+### Due: Wednesday, September 7, 11:59 PM                               
 ### 10 Points
 ### Lab Assistance provided by Michael McCarthy, Abhraneil Chandra and Arjun Brar
 #### McCarthy Email: mm6@andrew.cmu.edu
@@ -29,6 +29,8 @@ The contracts themselves will be studied in detail in class. For
 now, we want to get some experience deploying and interacting with the
 Solidity code and the environment provided by client side Truffle and
 server side Ganache.
+
+It is important that you take your time and understand what is going on in these exercises. Start early and leave some time for debugging.
 
 ## Part 1. Installations
 
