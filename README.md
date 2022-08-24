@@ -415,7 +415,7 @@ d. Provide the workspace with an appropriate name.
 
 e. Save the workspace.
 
-5) Notice that you have two contracts in the contracts subdirectory. One of these is the migration contract and the other two are ConvertLib.sol	and MetaCoin.sol.
+5) Notice that you have two contracts in the contracts subdirectory. One of these is ConvertLib.sol and the other is MetaCoin.sol.
 
 6) Study MetaCoin.sol and ConvertLib.sol and then run the following commands in order.
 
