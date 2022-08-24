@@ -289,13 +289,21 @@ b. To create a package.json file, run the following command
  ```
  Take the suggested defaults.
 
+ c) From the project directory, run the command
 
-c. Compile and deploy the contracts:
+  ```sh
+
+   npm install dotenv truffle-wallet-provider ethereumjs-wallet
+
+  ```
+This creates a node_modules directory. Ignore the warnings.
+
+d. Compile and deploy the contracts:
 ```sh
   truffle migrate --reset
 ```
 
-d. Use the console to access the contract and establish a web3 connection:
+e. Use the console to access the contract and establish a web3 connection:
 
 From the command line, execute the following commands:
 
