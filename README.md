@@ -721,7 +721,7 @@ n) From the nft directory, compile the nft contract:
 ```js
     owner
 ```
-   x) Transfer the token to the second account.
+   x) Transfer the token to the second account. Save the receipt.
 ```js
    account_from = "0xTHE_ADDRESS_OF_THE_FIRST_ACCOUNT"
 ```
