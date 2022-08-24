@@ -629,7 +629,7 @@ f) In a shell in the nft directory, run
 ```sh
     npm install @truffle/hdwallet-provider@1.2.3
 ```
-g) Modify truffle-config.js so it has compiler version 0.8.1 and set docker to false.
+g) Modify truffle-config.js so that it has a compiler version of 0.8.1 and set docker to false. The compiler section should appear as follows:
 ```js
     // Configure your compilers
     compilers: {
