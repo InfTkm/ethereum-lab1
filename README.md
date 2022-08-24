@@ -577,7 +577,8 @@ https://docs.ipfs.io/install/command-line/#system-requirements
 
 https://docs.ipfs.io/how-to/command-line-quick-start/
 
-3) These instructions are modified from the video found here:
+3) These instructions are modified from the video found here. But we are not using the same test network as mentioned in the video. Watch the video but follow the directions below.
+
 https://www.youtube.com/watch?v=IFpU4TNwXec
 
   a) In an empty directory named nft, run
