@@ -540,7 +540,7 @@ submit three items:
 event: 'Insufficient_Funds'
 ```
 
-    d) Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.  
+d) Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.  
 
 
  11) Note that, from the project directory, you can compile your Solidity code by running:
@@ -564,7 +564,6 @@ Part 4 Submission summary:
               Question 10 d. Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.
 
 :checkered_flag:**12) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part4.doc or Lab1Part4.pdf.**
-
 
 
 ## Part 5 Creating an NFT
