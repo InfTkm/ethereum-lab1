@@ -427,7 +427,7 @@ e. Save the workspace.
 6) Study MetaCoin.sol and ConvertLib.sol and then run the following commands in order.
 
 Note that most of these commands are 'calls' and cost no gas. The transaction sendCoin,
-however, costs gas and generates a receipt. Make a copy of this receipt for submission.
+however, costs gas and generates a receipt. Make a copy of this receipt (from sendCoin) for submission.
 
 
 ```sh
@@ -439,10 +439,14 @@ truffle console
 
 metaCoinInstance = await MetaCoin.deployed()
 
+```
+```
+
 balance = await metaCoinInstance.getBalance.call(accounts[0])
-
+```
+```
 balance
-
+```
 balance.toNumber()
 ```
 ```js
