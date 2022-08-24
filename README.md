@@ -60,7 +60,7 @@ It is important that you take your time and understand what is going on in these
    See: https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity
 
 
-## Part 2  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
+## Part 2  Deploying contracts to Ganache (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
 1) Run ganache quick start and leave it running for the remainder of this part.
 2) Create a new project directory named DBUC_Lab1_Part2 and cd into it.
@@ -243,7 +243,7 @@ truffle(ganache)>ctrl+d
 :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a clearly labeled single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf. **
 
 
-## Part 3  (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
+## Part 3 Deploying Contracts to Ganache (Modified from "Mastering Ethereum" by Antonopoulos and Wood)
 
 1) Create a new project directory named DBUC_Lab1_Part3 and cd into it.
 
@@ -568,7 +568,7 @@ Part 4 Submission summary:
 :checkered_flag:**12) Place your submissions in a clearly labeled single Word or PDF document named Lab1Part4.doc or Lab1Part4.pdf.**
 
 
-## Part 5 Creating an NFT
+## Part 5 Creating an NFT using Ganache
 
 
 1) Using the directions found here, install the Interplanetary File System (IPFS)
