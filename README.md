@@ -700,12 +700,16 @@ n) From the nft directory, compile the nft contract:
    t) Examine the name of the contract:
 ```js
    let nameOfToken = await contract.name()
+```
+```js
    nameOfToken
 ```
 
    u) Examine the balance of the first account:
 ```js
    let balance = await contract.balanceOf("ACCOUNT_ADDR_GOES_HERE")
+```
+```js
    balance.toNumber()
 ```
    v) Examine the balance of the second account. Fill in the blank.
@@ -713,13 +717,21 @@ n) From the nft directory, compile the nft contract:
    w) Who is the owner of the Token ID 1?
 ```js
     let owner = await contract.ownerOf("1")
+```
+```js
     owner
 ```
    x) Transfer the token to the second account.
 ```js
    account_from = "0xTHE_ADDRESS_OF_THE_FIRST_ACCOUNT"
+```
+```js
    account_to = "0xTHE_ADDRESS_OF_THE_SECOND_ACCOUNT"
+```
+```js
    let transfer = await contract.transferFrom(account_from, account_to, 1)
+```
+```js
    transfer
 ```
    y) Who is the new owner? Show the command that you use to learn who the new owner is. Fill in the blank.
