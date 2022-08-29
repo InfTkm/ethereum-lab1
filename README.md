@@ -66,29 +66,29 @@ It is important that you take your time and understand what is going on in these
 2) Create a new project directory named DBUC_Lab1_Part2 and cd into it.
 3) Execute the command:
 
-```sh
+   ```sh
 
    truffle init
 
-```
+   ```
 
 4) Examine the directory structure:
 
-* **contracts** holds solidity source code
-  * Migrations.sol is a deployment contract that we do not normally change.
-* **migrations** holds javascript code for efficient redeployments
-  * Files here are numbered to specify the order of deployments.
-  * For example, 1_initial_migrations.js would run first. 2_deploy_migrartions.js would run second and so on.
-  * The first migration would normally deploy the Migrations.sol contract.
-* **test**
-  * This directory is for writing tests in Javascript.
+   * **contracts** holds solidity source code
+      * Migrations.sol is a deployment contract that we do not normally change.
+   * **migrations** holds javascript code for efficient redeployments
+      * Files here are numbered to specify the order of deployments.
+      * For example, 1_initial_migrations.js would run first. 2_deploy_migrartions.js would run second and so on.
+      * The first migration would normally deploy the Migrations.sol contract.
+   * **test**
+      * This directory is for writing tests in Javascript.
 It typically uses the mocha framework and Chai Assertions library.
 In more complex deployments, this directory structure will mirror
 the directory structure required by the application.
-* **truffle-config.js**
+   * **truffle-config.js**
 
-  * This Javascript file contains configuration parameters for this truffle project.
-  * You may select your Solidity compiler version in this file.
+      * This Javascript file contains configuration parameters for this truffle project.
+      * You may select your Solidity compiler version in this file.
 
 5) Create a new contract in the contracts directory. This file will be named
    Faucet.sol. The content of Faucet.sol is:
@@ -147,98 +147,97 @@ the directory structure required by the application.
 
 10) To interact with the deployed contract and accounts, use the truffle console.
 
-a. From the command line, execute the following commands:
+      a. From the command line, execute the following commands:
 
-```sh
-truffle console
-```
+      ```sh
+      truffle console
+      ```
 
-b. Access the contract with an asynchronous request. Use a
+      b. Access the contract with an asynchronous request. Use a
        callback function and a promise. The callback
        function is defined within the "then" clause.
        Execute the following command within the truffle console.
 
-```js
-Faucet.deployed().then(function(x){ myApp = x; });
-```
+      ```js
+      Faucet.deployed().then(function(x){ myApp = x; });
+      ```
 
-The response should be 'undefined'.
+      The response should be 'undefined'.
 
-c. To view the response enter the name myApp.
+      c. To view the response enter the name myApp.
 
-```
-myApp
+      ```
+      myApp
+      ```
+      d. To get access to a web3 object, enter three lines of Javascript.
+      The first two will return 'undefined'.
 
-```
-d. To get access to a web3 object, enter three lines of Javascript.
-The first two will return 'undefined'.
+      ```js
+      var Web3 = require('web3');
+      var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+      web3.isConnected() // should return true if all three lines worked.
+      ```
+      e. Get the balance on the contract.
 
-```js
-var Web3 = require('web3');
-var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
-web3.isConnected() // should return true if all three lines worked.
-```
-e. Get the balance on the contract.
+      ```js
+      contractBalance = web3.eth.getBalance(Faucet.address).toNumber()
+      ```
 
-```js
-contractBalance = web3.eth.getBalance(Faucet.address).toNumber()
-```
+      f. View the account addresses available on Ganache:
 
-f. View the account addresses available on Ganache:
+      ```js
+      web3.eth.accounts
+      ```
 
-```js
-web3.eth.accounts
-```
+      g. View the first address. This address is our default address provided
+            by Ganache. We are in possession of its private key. Ganache has
+            provided this account with 100 eth (but only usable on Ganache).
 
-g. View the first address. This address is our default address provided
-      by Ganache. We are in possession of its private key. Ganache has
-      provided this account with 100 eth (but only usable on Ganache).
+      ```js
+      web3.eth.accounts[0]
+      ```
 
-```js
-web3.eth.accounts[0]
-```
+      h. View the contract address.
 
-h. View the contract address.
+      ```js
+      Faucet.address
+      ```
 
-```js
-Faucet.address
-```
+      i. Using web3, transfer eth from the first account to the contract.
+      The value returned is the transaction hash. Check the logs in Ganache.
 
-i. Using web3, transfer eth from the first account to the contract.
-The value returned is the transaction hash. Check the logs in Ganache.
+      ```js
+      web3.eth.sendTransaction({from:web3.eth.accounts[0],to:Faucet.address,value:web3.toWei(0.5, 'ether')})
+      ```
 
-```js
-web3.eth.sendTransaction({from:web3.eth.accounts[0],to:Faucet.address,value:web3.toWei(0.5, 'ether')})
-```
+      j. Check that the balance on the contract is higher than before.
 
-j. Check that the balance on the contract is higher than before.
+      ```js
+      web3.eth.getBalance(Faucet.address).toNumber();
+      ```
 
-```js
-web3.eth.getBalance(Faucet.address).toNumber();
-```
+      k. Withdraw some ether from the contract and deposit to account[0]. This returns 'undefined'.
 
-k. Withdraw some ether from the contract and deposit to account[0]. This returns 'undefined'.
+      ```js
+      Faucet.deployed().then(instance => {receipt = instance.withdraw(web3.toWei(0.1,'ether'))});
+      ```
 
-```js
-Faucet.deployed().then(instance => {receipt = instance.withdraw(web3.toWei(0.1,'ether'))});
-```
+      l. But we can examine the returned receipt.
 
-l. But we can examine the returned receipt.
+      ```js
+      receipt
+      ```
+      m. Check the balance on account[0]. Should be 99590121300000000000.
 
-```js
-receipt
-```
-m. Check the balance on account[0]. Should be 99590121300000000000.
+      ```js
+      web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
+      ```
 
-```js
-web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
-```
+      n. To exit the truffle console hit control d.
 
-n. To exit the truffle console hit control d.
-
-```
-truffle(ganache)>ctrl+d
-```
+      ```
+      truffle(ganache)>ctrl+d
+      ```
 
 :checkered_flag:**11) At this point, take three screenshots of Ganache. Take a screenshot of your Ganache Accounts, Blocks, and Transactions. Place these in a clearly labeled single Word or PDF document named Lab1Part2.doc or Lab1Part2.pdf. **
 
@@ -274,58 +273,58 @@ truffle(ganache)>ctrl+d
 
 6) Next, you will deploy this new contract to Ganache.
 
-a. Create a file named 2_deploy_migrations.js in the migrations directory:
+      a. Create a file named 2_deploy_migrations.js in the migrations directory:
 
-```js
-// Javascript in 2_deploy_migrations.js to deploy Faucet.sol
-var Faucet = artifacts.require("./Faucet.sol");
-module.exports = function(deployer) {
-  deployer.deploy(Faucet);
-};
-```
-b. To create a package.json file, run the following command
-   from within the project directory:
+      ```js
+      // Javascript in 2_deploy_migrations.js to deploy Faucet.sol
+      var Faucet = artifacts.require("./Faucet.sol");
+      module.exports = function(deployer) {
+      deployer.deploy(Faucet);
+      };
+      ```
+      b. To create a package.json file, run the following command
+         from within the project directory:
 
- ```sh
-   npm init
- ```
- Take the suggested defaults.
+      ```sh
+         npm init
+      ```
+      Take the suggested defaults.
 
- c. From the project directory, run the command
+      c. From the project directory, run the command
 
-  ```sh
+      ```sh
 
-   npm install dotenv truffle-wallet-provider ethereumjs-wallet
+         npm install dotenv truffle-wallet-provider ethereumjs-wallet
 
-  ```
-This creates a node_modules directory. Ignore the warnings.
+      ```
+      This creates a node_modules directory. Ignore the warnings.
 
-d. Compile and deploy the contracts:
-```sh
-  truffle migrate --reset
-```
+      d. Compile and deploy the contracts:
+      ```sh
+      truffle migrate --reset
+      ```
 
-e. Use the console to access the contract and establish a web3 connection:
+      e. Use the console to access the contract and establish a web3 connection:
 
-From the command line, execute the following commands:
+      From the command line, execute the following commands:
 
-```sh
-truffle console
-```
-Within the console, run the following:
+      ```sh
+      truffle console
+      ```
+      Within the console, run the following:
 
-```js
-Faucet.deployed().then(function(x){ myFaucet = x; });
-```
+      ```js
+      Faucet.deployed().then(function(x){ myFaucet = x; });
+      ```
 
-Within the console, run the following to access web3:
+      Within the console, run the following to access web3:
 
 
-```js
-var Web3 = require('web3');
-var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
-web3.isConnected() // should return true if all three lines worked.
-```
+      ```js
+      var Web3 = require('web3');
+      var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+      web3.isConnected() // should return true if all three lines worked.
+      ```
 
 7) Send a total of 2 ether to the contract with these two commands:
 
@@ -414,15 +413,15 @@ module.exports = {
 
 4) Run a new instance of ganache and configure Ganache as before:
 
-a. Select "new workspace".
+   a. Select "new workspace".
 
-b. Select "add project".
+   b. Select "add project".
 
-c. Choose the file "truffle-config.js" in your "DBUC_Lab1_Part4" project directory.
+   c. Choose the file "truffle-config.js" in your "DBUC_Lab1_Part4" project directory.
 
-d. Provide the workspace with an appropriate name.
+   d. Provide the workspace with an appropriate name.
 
-e. Save the workspace.
+   e. Save the workspace.
 
 5) Notice that you have two contracts in the contracts subdirectory. One of these is ConvertLib.sol and the other is MetaCoin.sol.
 
@@ -538,11 +537,11 @@ submit three items:
 
     c) Show the transaction receipt that is returned to the caller. This transaction receipt will contain the following line:
 
-```js
-event: 'Insufficient_Funds'
-```
+    ```js
+    event: 'Insufficient_Funds'
+    ```
 
-d) Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.  
+    d) Submit a screenshot of the Ganache Events screen showing the details of the Insufficient_Funds Event.  
 
 
  11) Note that, from the project directory, you can compile your Solidity code by running:
@@ -581,58 +580,58 @@ https://docs.ipfs.io/how-to/command-line-quick-start/
 
 3) These instructions are modified from the video found here. But we are not using the same test network as mentioned in the video. Watch the video but follow the directions below.
 
-https://www.youtube.com/watch?v=IFpU4TNwXec
+   https://www.youtube.com/watch?v=IFpU4TNwXec
 
-  a) In an empty directory named nft, run
-```sh
-     truffle init
-```
-  b) In the same directory run
-```sh
-  npm install @openzeppelin/contracts
-```
+    a) In an empty directory named nft, run
+   
+      ```sh
+      truffle init
+      ```
+    b) In the same directory run
+    ```sh
+    npm install @openzeppelin/contracts
+    ```
 
-c) Within the contracts directory, create UniqueAsset.sol.
-```js
-// UniqueAsset.sol
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-contract UniqueAsset is ERC721URIStorage {
-  using Counters for Counters.Counter;
-  Counters.Counter private _tokenIds;
-  constructor() ERC721("UniqueAsset","UNA") {}
-  function awardItem(address recipient, string memory metadata)
-  public returns (uint256) {
-    _tokenIds.increment();
-    uint256 newItemId = _tokenIds.current();
-    _mint(recipient,newItemId);
-    _setTokenURI(newItemId,metadata);
-    return newItemId;
-  }
-}
-```
-d) Within the migrations directory, create 2_deploy_contracts.js.
+    c) Within the contracts directory, create UniqueAsset.sol.
+    ```js
+   // UniqueAsset.sol
+   // SPDX-License-Identifier: MIT
+   pragma solidity ^0.8.0;
+   import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+   import "@openzeppelin/contracts/utils/Counters.sol";
+   contract UniqueAsset is ERC721URIStorage {
+     using Counters for Counters.Counter;
+     Counters.Counter private _tokenIds;
+     constructor() ERC721("UniqueAsset","UNA") {}
+     function awardItem(address recipient, string memory metadata)
+     public returns (uint256) {
+       _tokenIds.increment();
+       uint256 newItemId = _tokenIds.current();
+       _mint(recipient,newItemId);
+       _setTokenURI(newItemId,metadata);
+      return newItemId;
+     }
+   }
+   ```
+   d. Within the migrations directory, create 2_deploy_contracts.js.
 
-```js
-const UniqueAsset = artifacts.require("UniqueAsset");
-module.exports = function(deployer) {
-  deployer.deploy(UniqueAsset);
-}
+   ```js
+   const UniqueAsset = artifacts.require("UniqueAsset");
+   module.exports = function(deployer) {
+      deployer.deploy(UniqueAsset);
+   }
+   ```
+   e) In a shell in the nft directory, run
 
-```
-e) In a shell in the nft directory, run
-
-```sh
+   ```sh
     npm install fs
-```
-f) In a shell in the nft directory, run
-```sh
+   ```
+   f) In a shell in the nft directory, run
+   ```sh
     npm install @truffle/hdwallet-provider@1.2.3
-```
-g) Modify truffle-config.js so that it has a compiler version of 0.8.1 and set docker to false. The compiler section should appear as follows:
-```js
+   ```
+   g) Modify truffle-config.js so that it has a compiler version of 0.8.1 and set docker to false. The compiler section should appear as follows:
+   ```js
     // Configure your compilers
     compilers: {
       solc: {
@@ -647,95 +646,95 @@ g) Modify truffle-config.js so that it has a compiler version of 0.8.1 and set d
         }
       }
     },
-```
+   ```
    h) From the nft directory, run
-```sh
+   ```sh
       mkdir credential
-```
-i) Place a simple file in the credential directory
-```sh
+   ```
+   i) Place a simple file in the credential directory
+   ```sh
       echo "This is an important credential" > credential.txt
-```
-j) Add the credential file to ipfs and make a copy of the content identifier (CID). The CID begins with "Qm".
-```sh
+   ```
+   j) Add the credential file to ipfs and make a copy of the content identifier (CID). The CID begins with "Qm".
+   ```sh
       ipfs add credential.txt
-```
-k) Add this metadata file to the credential directory. Name it credentialMetadata.json. Include the CID associated with credential.txt.
-```json
+   ```
+   k) Add this metadata file to the credential directory. Name it credentialMetadata.json. Include the CID associated with credential.txt.
+   ```json
    {
      "name" : "My cool credential",
      "description" : "This is a credential that I worked very hard to attain.",
      "file" : "https//ipfs.io/ipfs/THE_CREDENTIAL_CID_GOES_HERE"
    }
-```
-l) Add the metadata file to ipfs:
-```sh
+   ```
+   l) Add the metadata file to ipfs:
+   ```sh
       ipfs add credentialMetadata.json
-```
-m) Examine your metadata file using ipfs:
-```sh
+   ```
+   m) Examine your metadata file using ipfs:
+   ```sh
       ipfs cat /ipfs/THE_METADATA_CID_GOES_HERE
-```
-n) From the nft directory, compile the nft contract:
-```sh
+   ```
+   n) From the nft directory, compile the nft contract:
+   ```sh
    truffle compile
-```
+   ```
 
    o) Run Ganache Workspace and point to nft/truffle-config.js.
 
    p) From the nft directory, deploy the NFT contract to Ganache:
-```sh
+   ```sh
    truffle migrate
-```
+   ```
    q) Run the Truffle console:
-```sh
+   ```sh
    truffle console
-```
+   ```
    r) Access the contract:
-```js
+   ```js
    let contract = await UniqueAsset.deployed();
-```
+   ```
    s) Visit Ganache and make a copy of the first account address (include the "0x"). This becomes the first argument to the awardItem call. Use the CID of the metadata file as the second argument. Run the following command in the truffle console:
-```js
+   ```js
    let result = await contract.awardItem("ACCOUNT_ADDR_GOES_HERE","https//ipfs.io/ipfs/THE_META_DATA_CID_GOES_HERE")
-```
+   ```
    t) Examine the name of the contract:
-```js
+   ```js
    let nameOfToken = await contract.name()
-```
-```js
+   ```
+   ```js
    nameOfToken
-```
+   ```
 
    u) Examine the balance of the first account:
-```js
+   ```js
    let balance = await contract.balanceOf("ACCOUNT_ADDR_GOES_HERE")
-```
-```js
+   ```
+   ```js
    balance.toNumber()
-```
+   ```
    v) Examine the balance of the second account. Fill in the blank.
 
    w) Who is the owner of the Token ID 1?
-```js
+   ```js
     let owner = await contract.ownerOf("1")
-```
-```js
+   ```
+   ```js
     owner
-```
+   ```
    x) Transfer the token to the second account. Save the receipt.
-```js
+   ```js
    account_from = "0xTHE_ADDRESS_OF_THE_FIRST_ACCOUNT"
-```
-```js
+   ```
+   ```js
    account_to = "0xTHE_ADDRESS_OF_THE_SECOND_ACCOUNT"
-```
-```js
+   ```
+   ```js
    let transfer = await contract.transferFrom(account_from, account_to, 1)
-```
-```js
+   ```
+   ```js
    transfer
-```
+   ```
    y) Who is the new owner? Show the command that you use to learn who the new owner is. Fill in the blank.
 
    :checkered_flag:**11)Place a copy of the transaction receipt from step 3 x) and your answer to question 3 y) in a clearly labeled single Word or PDF document named Lab1Part5.doc or Lab1Part5.pdf.**
