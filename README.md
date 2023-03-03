@@ -1,11 +1,14 @@
-## Fall 2022 Blockchain and SQL Fundamentals                             
+## Spring 2023 Deveoping Blockchain Use Cases                             
 ### Carnegie Mellon University                  
-### Due: Wednesday, September 7, 11:59 PM                               
+### Due: Monday, March 27, 11:59 PM                               
 ### 10 Points
-### Lab Assistance provided by Michael McCarthy, Abhraneil Chandra and Arjun Brar
-#### McCarthy Email: mm6@andrew.cmu.edu
-#### Chandra Email: abhranec@andrew.cmu.edu
+### Lab Assistance provided by Atharva Joshi and Michael McCarthy
+#### Artharva Joshi Email: atharvaj@andrew.cmu.edu
+#### Michael McCarthy Email: mm6@andrew.cmu.edu
+<!--
 #### Arjun Email: abrar@andrew.cmu.edu
+-->
+
 
 **Learning Objectives:** In this lab the student will set up an Ethereum
 development environment (using Truffle and Ganache) and deploy four smart
