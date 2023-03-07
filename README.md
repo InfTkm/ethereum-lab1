@@ -575,11 +575,11 @@ Part 4 Submission summary:
 
 1) Using the directions found here, install the Interplanetary File System (IPFS)
 
-https://docs.ipfs.io/install/command-line/#system-requirements
+https://docs.ipfs.tech/install/command-line/#system-requirements
 
 2) Using these directions, initialize the IPFS repository.
 
-https://docs.ipfs.io/how-to/command-line-quick-start/
+https://docs.ipfs.tech/how-to/command-line-quick-start/
 
 3) These instructions are modified from the video found here. But we are not using the same test network as mentioned in the video. Watch the video but follow the directions below.
 
