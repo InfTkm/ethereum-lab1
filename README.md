@@ -572,10 +572,11 @@ Part 4 Submission summary:
 
 ## Part 5 Creating an NFT using Ganache
 
-
 1) Using the directions found here, install the Interplanetary File System (IPFS)
 
 https://docs.ipfs.tech/install/command-line/#system-requirements
+
+   You want the IPFS Kubo for Go. You can select your platform and install the official binary distribution.
 
 2) Using these directions, initialize the IPFS repository.
 
