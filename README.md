@@ -573,7 +573,7 @@ Part 4 Submission summary:
 
 ## Part 5 Creating an NFT using Ganache
 
-Web3 is about ownership. 
+In this part, we will use the Interplanetary File System (IPFS) and Ganache to store and establish ownership of a non-fungible token (NFT). 
 
 The Interplanetary File System (IPFS) is a decentralized file system. The idea is, instead of giving
 a name to a file and letting it live on your local machine, we use the hash of the file's content as 
