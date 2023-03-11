@@ -2,9 +2,10 @@
 ### Carnegie Mellon University                  
 ### Due: Monday, March 27, 11:59 PM                               
 ### 10 Points
-### Lab Assistance provided by Atharva Joshi and Michael McCarthy
-#### Artharva Joshi Email: atharvaj@andrew.cmu.edu
+### Lab Assistance provided by Michael McCarthy and Atharva Joshi
 #### Michael McCarthy Email: mm6@andrew.cmu.edu
+#### Artharva Joshi Email: atharvaj@andrew.cmu.edu
+
 <!--
 #### Arjun Email: abrar@andrew.cmu.edu
 -->
@@ -572,6 +573,16 @@ Part 4 Submission summary:
 
 ## Part 5 Creating an NFT using Ganache
 
+Web3 is about ownership. 
+
+The Interplanetary File System (IPFS) is a decentralized file system. The idea is, instead of giving
+a name to a file and letting it live on your local machine, we use the hash of the file's content as 
+the name of the file and store it on a peer on the IPFS network. In this exercise, we will be storing the 
+file locally (but using IPFS commands). 
+
+We will deploy a non-fungible token (NFT) smart contract and store the hash of a metadata file in 
+the contract's memory. The metadata file and the file itself will be stored on IPFS. 
+
 1) Using the directions found here, install the Interplanetary File System (IPFS)
 
 https://docs.ipfs.tech/install/command-line/#system-requirements
@@ -582,7 +593,7 @@ https://docs.ipfs.tech/install/command-line/#system-requirements
 
 https://docs.ipfs.tech/how-to/command-line-quick-start/
 
-3) These instructions are modified from the video found here. But we are not using the same test network as mentioned in the video. Watch the video but follow the directions below.
+3) These instructions are modified from the video found next. But we are not using the same test network or wallet as shown in the video. Watch the video but follow the directions below.
 
    https://www.youtube.com/watch?v=IFpU4TNwXec
 
