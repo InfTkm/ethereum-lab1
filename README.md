@@ -46,10 +46,11 @@ It is important that you take your time and understand what is going on in these
 4) Download and install node.js and npm.
    The node package manager (npm) is included with the download of
    node.js. See https://nodejs.org/en/download/
-5) Install truffle. We are using version 5.5.23.
+5) Mac users need to install Xcode.
+6) Install truffle. We are using version 5.5.23.
    npm i -g truffle@5.5.23
    https://truffleframework.com/docs/truffle/getting-started/installation
-6) Download and install Ganache.
+7) Download and install Ganache.
    See: https://truffleframework.com/ganache
 
    NOTE: The current release of Ganache is only available for x86 architectures.
@@ -57,9 +58,9 @@ It is important that you take your time and understand what is going on in these
    (See: https://support.apple.com/en-us/HT211861). However, this is not available
    on Virtual Machines on M1 and M2 Mac devices.
 
-7) If you want to use Visual Studio Code as your editor (recommended) , download and install Visual Studio Code.
+8) If you want to use Visual Studio Code as your editor (recommended) , download and install Visual Studio Code.
    See: https://code.visualstudio.com
-8) If you are using Visual Studio Code, you may want to download and install
+9) If you are using Visual Studio Code, you may want to download and install
    solidity.
    See: https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity
 
