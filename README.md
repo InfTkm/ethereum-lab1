@@ -4,7 +4,7 @@
 ### 10 Points
 ### Lab Assistance provided by Michael McCarthy and Atharva Joshi
 #### Michael McCarthy Email: mm6@andrew.cmu.edu
-#### Artharva Joshi Email: atharvaj@andrew.cmu.edu
+#### Atharva Joshi Email: atharvaj@andrew.cmu.edu
 
 <!--
 #### Arjun Email: abrar@andrew.cmu.edu
@@ -589,6 +589,7 @@ the contract's memory. The metadata file and the file itself will be stored on I
 https://docs.ipfs.tech/install/command-line/#system-requirements
 
    You want the IPFS Kubo for Go. You can select your platform and install the official binary distribution.
+   Windows users: it is recommended that you use powershell (instead of command prompt) for these steps
 
 2) Using these directions, initialize the IPFS repository.
 
@@ -695,7 +696,8 @@ https://docs.ipfs.tech/how-to/command-line-quick-start/
    ```sh
    truffle compile
    ```
-
+   You will get some warnings, ignore them.
+   
    o) Run Ganache Workspace and point to nft/truffle-config.js.
 
    p) From the nft directory, deploy the NFT contract to Ganache:
