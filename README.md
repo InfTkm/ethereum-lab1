@@ -232,7 +232,7 @@ the directory structure required by the application.
       ```js
       receipt
       ```
-      m. Check the balance on account[0]. Should be 99590121300000000000.
+      m. Check the balance on account[0]. It should be approximately 99590121300000000000. Your answer is in wei and may vary a bit due to different gas fees.
 
       ```js
       web3.eth.getBalance(web3.eth.accounts[0]).toNumber();
